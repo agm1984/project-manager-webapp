@@ -1,0 +1,2 @@
+export const NAV_GET_AVATAR = 'NAV_GET_AVATAR'
+export const NAV_GET_AVATAR_FAIL = 'NAV_GET_AVATAR_FAIL'

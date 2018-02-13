@@ -1,0 +1,31 @@
+.row-margin-xs {
+  margin-top: 0.8rem; }
+
+.row-margin-sm {
+  margin-top: 1.3rem; }
+
+.row-margin-md {
+  margin-top: 2.1rem; }
+
+.row-margin-lg {
+  margin-top: 3.4rem; }
+
+.row-margin-xl {
+  margin-top: 5.5rem; }
+
+.auth_error-container {
+  width: 100%;
+  padding: 1.6rem;
+  border-top: 0.1rem solid #dd0426;
+  border-bottom: 0.1rem solid #dd0426;
+  border-left: 0.1rem solid #dd0426;
+  border-right: 0.1rem solid #dd0426;
+  border-radius: 0.1rem 0.1rem 0.1rem 0.1rem;
+  box-sizing: border-box;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  color: #dd0426;
+  background-color: #f8dee0; }
+
+.auth_error-header {
+  font-weight: 700; }

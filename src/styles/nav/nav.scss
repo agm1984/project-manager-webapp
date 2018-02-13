@@ -1,0 +1,142 @@
+@import "../variables/_colors.scss";
+@import "../variables/_sizes.scss";
+@import "../mixins/_mixins.scss";
+
+// ## MAIN NAV LAYOUT
+// ########################################################
+
+$nav-side-containers: 20.4rem;
+$nav-side-padding: $md;
+$nav-item-height: 3.2rem;
+$nav-spacer-margin: $md;
+
+
+#nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  @include flex(row);
+  @include flex-center;
+  width: 100%;
+  height: $nav-height;
+  background-color: $adam-white;
+  border-bottom: $border-xxs solid $adam-app-border;
+  user-select: none;
+  z-index: 1; }
+
+#nav:before {
+  content:'';
+  position: absolute;
+  
+  z-index: 2;
+}
+
+#nav_elements {
+  height: $nav-height;
+  @include flex(row);
+  flex: 1; }
+
+#nav_logo-container {
+  @include flex(row);
+  @include flex-start;
+  width: $nav-side-containers;
+  padding-left: $nav-side-padding;
+}
+
+#nav_logo {
+  height: $nav-item-height;
+  width: auto;
+}
+
+#nav_menu {
+  @include flex(row);
+  @include flex-center;
+  flex: 1; }
+  // background-color: lightblue; }
+
+// ## NAV LAYOUT
+// ########################################################
+
+.nav_menu-item {
+  outline: none;
+  height: $nav-height;
+  @include flex(row);
+  @include flex-start;
+  font-size: $font-xl;
+  line-height: $font-xl; }
+
+.nav_menu-spacer {
+  margin-left: $nav-spacer-margin;
+  margin-right: $nav-spacer-margin;
+  color: $adam-sub-heading; }
+
+// ## NAV LINKS
+// ########################################################
+
+a.nav_link:link {
+  font-weight: $fw-heading;
+  color: $adam-heading;
+  text-decoration: none; }
+a.nav_link:visited {
+  color: $adam-heading; }
+a.nav_link:hover {
+  color: $adam-black; }
+a.nav_link:active {
+  color: $adam-red; }
+a.nav_link-active {
+  color: $adam-red;
+  margin-top: 3.3rem; }
+a.nav_link-active:visited {
+  color: $adam-red; }
+
+a.nav_link-active:after {
+  content: '';
+  margin-top: 2.9rem;      // margin and height should
+  height: 0.4rem;          // add up to active link margin
+  background: $adam-red;
+  margin-left: -$nav-spacer-margin;
+  display: block; }
+a.nav_link-active::after {
+  content: '';
+  margin-top: 2.9rem;      // margin and height should
+  height: 0.4rem;          // add up to active link margin
+  background: $adam-red;
+  margin-right: -$nav-spacer-margin;
+  display: block; }
+
+// ## NAV USER CONTAINER
+// ########################################################
+
+#nav_user {
+  @include flex(row);
+  @include flex-end;
+  width: $nav-side-containers;
+  padding-right: $nav-side-padding; }
+  // background-color: lightgreen; }
+
+// User icon
+#nav_user-avatar {
+  width: $nav-item-height;
+  height: $nav-item-height;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  margin-right: $nav-side-padding; }
+
+.nav_user-signout {
+  @include flex(row);
+  @include flex-center;
+  font-size: $font-heading;
+  height: $font-heading;
+  white-space: nowrap; }
+
+a.nav_user-signout:link {
+  font-weight: $fw-heading;
+  color: $adam-sub-heading;
+  text-decoration: none; }
+a.nav_user-signout:visited {
+  color: $adam-sub-heading; }
+a.nav_user-signout:hover {
+  color: $adam-red; }
+a.nav_user-signout:active {
+  color: $adam-sub-heading; }

@@ -1,0 +1,153 @@
+@import "../variables/_colors.scss";
+@import "../variables/_sizes.scss";
+@import "../mixins/_mixins.scss";
+
+// ## VIEW                                           LAYOUT
+// ########################################################
+
+.view_container {
+  width: 100rem;
+  padding: 1.6rem;
+  box-sizing: border-box;
+  background-color: #fff;
+  border: 1px solid $adam-app-border;
+  border-radius: 0.4rem 0.4rem 0.4rem 0.4rem;
+  box-shadow: 0px 1px 1px $adam-app-border;
+}
+
+// ## VIEW                                           SUBNAV
+// ########################################################
+
+.subnav_title-bold {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  box-sizing: border-box;
+  font-weight: 600;
+  color: $adam-content;
+}
+
+.subnav_active {
+    padding-left: 0.8rem;
+    box-sizing: border-box;
+    color: $adam-green;
+    font-weight: 600;
+  }
+
+button.subnav_deactivate {
+  outline: none;
+  background:none;
+  border:none;
+  margin: 0;
+  padding: 0;
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  font-weight: 600;
+  color: $adam-orange;
+  text-decoration: none;
+}
+button.subnav_deactivate:hover {
+  color: $adam-heading;
+}
+button.subnav_deactivate:active {
+  color: $adam-orange;
+}
+
+// ## VIEW                                         SECTIONS
+// ########################################################
+
+.view_heading {
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: 600;
+  color: $adam-red;
+}
+
+.view_row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  min-height: 4.8rem;
+}
+
+.view_row-label {
+  width: 33%;
+  padding-right: 1.6rem;
+  box-sizing: border-box;
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  text-align: right;
+  color: $adam-sub-heading;
+  text-transform: uppercase;
+}
+
+.view_row-item {
+  flex: 1;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  color: $adam-heading;
+}
+
+.view_row-item span {
+  color: $adam-blue;
+  font-weight: 600;
+}
+
+a.view_link:link {
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  font-weight: 400;
+  color: $adam-red;
+  text-decoration: none;
+}
+a.view_link:visited {
+  color: $adam-red;
+}
+a.view_link:hover {
+  color: $adam-heading;
+}
+a.view_link:active {
+  color: $adam-heading;
+}
+
+#view_avatar-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#view_avatar-photo {
+  margin-bottom: 1.6rem;
+  height: 12.8rem;
+  width: 12.8rem;
+  border-radius: 50%;
+}
+
+// ## VIEW                                      BACK BUTTON
+// ########################################################
+
+.view_back {
+  margin-top: 3.2rem;
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+}
+
+button.view_back-link {
+  outline: none;
+  background:none;
+  border:none;
+  margin: 0;
+  padding: 0;
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  font-weight: 400;
+  color: $adam-red;
+  text-decoration: none;
+}
+button.view_back-link:hover {
+  color: $adam-heading;
+}
+button.view_back-link:active {
+  color: $adam-red;
+}

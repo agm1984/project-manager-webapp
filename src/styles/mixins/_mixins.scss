@@ -1,0 +1,41 @@
+// ################################ //
+// ######## TOP NAVIGATION ######## //
+// ################################ //
+
+// Flex
+@mixin flex($direction) {
+  display: flex;
+  flex-direction: $direction;
+}
+
+// Flex start
+@mixin flex-start {
+  align-items: center;
+  justify-content: flex-start;
+}
+
+// Flex center
+@mixin flex-center {
+  align-items: center;
+  justify-content: center;
+}
+
+// Flex end
+@mixin flex-end {
+  align-items: center;
+  justify-content: flex-end;
+}
+
+// Font
+@mixin font($size, $line, $weight, $color) {
+  font-size: $size;
+  line-height: $line;
+  font-weight: $weight;
+  color: $color;
+}
+
+
+// Profile image shaadow
+@mixin shadow {
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+}

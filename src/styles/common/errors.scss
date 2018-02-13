@@ -1,0 +1,23 @@
+@import "../variables/_colors.scss";
+@import "../variables/_sizes.scss";
+@import "../mixins/_mixins.scss";
+
+// ## COMMON                                  SERVER ERRORS
+// ########################################################
+
+.auth_error-container {
+  width: 100%;
+  padding: $md;
+  border-top: $border-xxs solid $adam-red;
+  border-bottom: $border-xxs solid $adam-red;
+  border-left: $border-xxs solid $adam-red;
+  border-right: $border-xxs solid $adam-red;
+  border-radius: $border-xxs $border-xxs $border-xxs $border-xxs;
+  box-sizing: border-box;
+  font-size: $font-md;
+  line-height: $font-md;
+  color: $adam-red;
+  background-color: $adam-input-error; }
+
+.auth_error-header {
+  font-weight: $fw-heading; }

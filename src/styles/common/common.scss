@@ -1,0 +1,50 @@
+@import "../variables/_colors.scss";
+@import "../variables/_sizes.scss";
+@import "../mixins/_mixins.scss";
+
+// ## NORMAL FORM INPUT STATE (TEXT INPUT, SELECT, ...)
+// ########################################################
+
+// WHAT USES THIS
+// form text input
+// form select input
+
+// ## BORDERS
+// ########################################################
+
+.primary-border {
+  box-sizing: border-box;
+  background: transparent;
+  border-top: $border-xxs solid $adam-app-border;
+  border-bottom: $border-xxs solid $adam-app-border;
+  border-left: $border-xxs solid $adam-app-border;
+  border-right: $border-xxs solid $adam-app-border;
+  border-radius: $border-xxs $border-xxs $border-xxs $border-xxs;
+  outline: 0;
+  background-color: $adam-white;
+}
+
+// ## BUTTONS
+// ########################################################
+
+.auth_signin_button-container {
+  @include flex(column);
+  @include flex-center;
+  flex: 0;
+  margin-top: $xl; }
+
+.auth_signin_button-button {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 100%;
+  padding-top: $md;
+  padding-bottom: $md;
+  color: $adam-white;
+  background-color: $adam-red;
+  border: none;
+  border-radius: $border-xxs $border-xxs $border-xxs $border-xxs;
+  text-align: center;
+  text-decoration: none;
+  font-size: $font-xl;
+  line-height: $font-xl;
+  font-weight: $fw-heading; }
