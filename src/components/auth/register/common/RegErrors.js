@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import '../Register.css'
 
 const RegServerErrors = (props) => {
   const { errors, style } = props

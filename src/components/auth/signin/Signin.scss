@@ -1,0 +1,162 @@
+@import "../../../styles/variables/_colors.scss";
+@import "../../../styles/variables/_sizes.scss";
+@import "../../../styles/mixins/_mixins.scss";
+
+// ## AUTH FORM                                      LAYOUT
+// ########################################################
+#signin_wrapper {
+  @include flex(column);
+  flex: 1;
+  min-height: 100vh;
+}
+
+#signin_container {
+  @include flex(column);
+  @include flex-center;
+  flex: 1;
+}
+
+#signin_heading {
+  width: 100%;
+  margin-top: $xl;
+  margin-bottom: $xl;
+  font-family: 'Oxygen', sans-serif;
+  font-size: $font-xl;
+  font-weight: $fw-md;
+  line-height: $font-auth;
+  letter-spacing: 1px;
+  color: #fff;
+  text-align: center;
+}
+
+.signin_input-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: $row-height-md;
+  margin-top: $xs;
+}
+
+.signin_input {
+  display: block;
+  width: 100%;
+  height: $row-height-md;
+  padding-left: $md;
+  box-shadow: none;
+  -webkit-appearance: none;
+  font-size: $font-xl;
+  line-height: $font-xl;
+  font-weight: $fw-md;
+}
+
+.signin_input::placeholder {
+  color: $adam-sub-heading;
+}
+
+.signin_empty {
+  color: $adam-sub-heading;
+}
+
+.signin_filled {
+  color: $adam-heading;
+}
+
+.signin_input-normal {
+  box-sizing: border-box;
+  background: transparent;
+  border-top: $border-xxs solid $adam-app-border;
+  border-bottom: $border-xxs solid $adam-app-border;
+  border-left: $border-xxs solid $adam-app-border; // why does this have a border defined
+  border-right: $border-xxs solid $adam-app-border; // and not use primary-border?
+  border-radius: 0;
+  outline: 0;
+  background-color: $adam-input-normal;
+}
+
+.signin_input-error {
+  box-sizing: border-box;
+  background: transparent;
+  border-top: $border-xxs solid #c93c31;
+  border-bottom: $border-xxs solid #c93c31;
+  border-left: $border-xxs solid #c93c31;
+  border-right: $border-xxs solid #c93c31;
+  outline: 0;
+  color: #c93c31;
+  background-color: $adam-input-error;
+}
+
+.signin_error_text {
+  padding-top: $xs;
+  padding-left: $xs;
+  padding-bottom: $xs;
+  font-style: italic;
+  font-size: $font-md;
+  line-height: $font-xl;
+  color: #db8f6b;
+}
+
+#signin_button-container {
+  @include flex(column);
+  @include flex-center;
+  flex: 0;
+  margin-top: 0.8rem;
+}
+
+#signin_button {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 100%;
+  padding-top: $md;
+  padding-bottom: $md;
+  color: $adam-white;
+  background-color: #1b1e3d;
+  border-width: 1px;
+  border-color: rgba(255, 255, 255, 0.2);
+  text-align: center;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-size: $font-xl;
+  line-height: $font-xl;
+  font-weight: $fw-heading;
+}
+
+#signin_button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+#signin_button:active {
+  background-color: #1b1e3d;
+}
+
+// ## AUTH FORM                               REGISTER LINK
+// ########################################################
+#signin_registerLink-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+}
+
+.signin_registerLink {
+  outline: none;
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 6.4rem;
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  font-weight: 400;
+  color: #fff;
+  text-decoration: none;
+}
+
+.signin_registerLink:hover {
+  color: #693e48;
+}
+
+.signin_registerLink:active {
+  color: #1b1e3d;
+}

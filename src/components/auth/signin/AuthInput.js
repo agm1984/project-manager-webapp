@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import './Signin.css'
 
 const SignInInput = (props) => {
   const {
@@ -7,23 +8,21 @@ const SignInInput = (props) => {
   } = props
   const { touched, error } = meta
   const maybeHasValue = (input.value)
-    ? 'edit_filled'
-    : 'edit_empty'
+    ? 'signin_filled'
+    : 'signin_empty'
   const maybeHasError = (touched && error)
-    ? 'form-text-input error'
-    : `form-text-input normal ${maybeHasValue}`
+    ? 'signin_input signin_input-error'
+    : `signin_input signin_input-normal ${maybeHasValue}`
   return (
-    <div className="edit_rowcontainer">
-      <div className="row-md">
-        <input
-          placeholder={placeholder}
-          name={name}
-          type={type}
-          className={maybeHasError}
-          {...input}
-        />
-      </div>
-      {touched && (error && <span className="auth_field_error">{error}</span>)}
+    <div className="signin_input-container">
+      <input
+        placeholder={placeholder}
+        name={name}
+        type={type}
+        className={maybeHasError}
+        {...input}
+      />
+      {touched && (error && <span className="signin_error_text">{error}</span>)}
     </div>
   )
 }

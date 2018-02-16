@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Geosuggest from 'react-geosuggest'
+import '../Register.css'
+
 // Redux-form stuff
 // https://github.com/ubilabs/react-geosuggest/issues/275
 
@@ -11,30 +13,30 @@ class RegGeoSuggest extends Component {
     } = this.props
     const { touched, error } = meta
     const maybeHasValue = (input.value)
-      ? 'edit_filled'
-      : 'edit_empty'
+      ? 'reg_filled'
+      : 'reg_empty'
     const maybeHasError = (touched && error)
-      ? 'form-text-input error'
-      : `form-text-input normal ${maybeHasValue}`
+      ? 'reg_input reg_input-error'
+      : `reg_input reg_input-normal ${maybeHasValue}`
     return (
-      <div className="edit_rowcontainer">
-        <div className="row-md">
-          <Geosuggest
-            ref={el => this._geoSuggest = el} // eslint-disable-line
-            placeholder={placeholder}
-            inputClassName={maybeHasError}
-            name={name}
-            initialValue={input.value}
-            onSuggestSelect={(suggest) => {
-              if (!suggest) {
-                return input.onChange(null)
-              }
-              return input.onChange(suggest.label)
-            }}
-            {...input}
-          />
-        </div>
-        {touched && (error && <span className="auth_field_error">{error}</span>)}
+      <div className="reg_input-container">
+        <Geosuggest
+          ref={(el) => {
+            this._geoSuggest = el
+          }}
+          placeholder={placeholder}
+          inputClassName={maybeHasError}
+          name={name}
+          initialValue={input.value}
+          onSuggestSelect={(suggest) => {
+            if (!suggest) {
+              return input.onChange(null)
+            }
+            return input.onChange(suggest.label)
+          }}
+          {...input}
+        />
+        {touched && (error && <span className="reg_error_text">{error}</span>)}
       </div>
     )
   }

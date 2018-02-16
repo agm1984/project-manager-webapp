@@ -1,35 +1,24 @@
 import React from 'react'
-import gerry from '../images/Gerry.jpg'
-import robin from '../images/Robin.jpg'
-import jacky from '../images/Jacky.jpg'
+import PropTypes from 'prop-types'
 
 const Images = (props) => {
-  const { active, items, useImages } = props
-  const imageWidth = 20
+  const { active, slides } = props
+  const imageWidth = 20 // viewport width %
   const sliderStyles = {
     left: `${(active * -imageWidth) + (imageWidth / 2)}%`,
-    width: `${items.length * imageWidth}%`,
+    width: `${slides.length * imageWidth}%`,
   }
-  // const slideStyles = {
-  //   width: (100 / items.length) + '%',
-  //   backgroundImage: `url(${image})`,
-  //   backgroundSize: 'cover',
-  //   backgroundRepeat: 'no-repeat',
-  //   backgroundPosition: '50% 60%',
-  // }
-  console.log('DIV STYLE', sliderStyles)
-  // console.log('WIDTH', slideStyles)
   return (
     <div className="slider-wrapper">
       <ul className="slides" style={sliderStyles}>
-        {items.map((image, index) => (
+        {slides.map((image, index) => (
           <li
             style={{
               backgroundImage: `url(${image})`,
               backgroundSize: 'cover',
               backgroundRepeat: 'no-repeat',
               backgroundPosition: '50% 60%',
-              width: `${100 / items.length}%`,
+              width: `${100 / slides.length}%`,
             }}
             key={index}
           />
@@ -37,6 +26,11 @@ const Images = (props) => {
       </ul>
     </div>
   )
+}
+
+Images.propTypes = {
+  active: PropTypes.number.isRequired,
+  slides: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
 
 export default Images

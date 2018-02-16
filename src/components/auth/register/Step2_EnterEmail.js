@@ -5,16 +5,16 @@ import RegSection from './common/RegSection'
 import RegErrors from './common/RegErrors'
 import RegInput from './common/RegInput'
 import RegBackLink from './common/RegBackLink'
-import Footer from '../../Footer'
 import validate from './reg_validator'
+import './Register.css'
 
 const EnterEmail = (props) => {
   const {
     onComplete, onBack, pristine, submitting, valid,
   } = props
   return (
-    <div id="auth_wrapper">
-      <div id="auth_container">
+    <div id="reg_wrapper">
+      <div id="reg_container">
         <RegSection heading="EMAIL">
           <RegErrors errors={[]} />
           <Field
@@ -23,10 +23,10 @@ const EnterEmail = (props) => {
             name="person_email"
             placeholder="Email"
           />
-          <div className="auth_signin_button-container">
+          <div id="reg_button-container">
             <button
               disabled={pristine || submitting || !valid}
-              className="auth_signin_button-button"
+              id="reg_button"
               onClick={onComplete}
             >
               NEXT STEP
@@ -35,7 +35,6 @@ const EnterEmail = (props) => {
         </RegSection>
         <RegBackLink onBack={onBack} />
       </div>
-      <Footer />
     </div>
   )
 }

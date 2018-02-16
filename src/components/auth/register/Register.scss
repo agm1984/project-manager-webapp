@@ -1,0 +1,178 @@
+@import "../../../styles/variables/_colors.scss";
+@import "../../../styles/variables/_sizes.scss";
+@import "../../../styles/mixins/_mixins.scss";
+
+// ## REGISTER FORM                                  LAYOUT
+// ########################################################
+#reg_wrapper {
+  @include flex(column);
+  flex: 1;
+  min-height: 100vh;
+}
+
+#reg_container {
+  @include flex(column);
+  @include flex-center;
+  flex: 1;
+}
+
+#reg_mainHeading {
+  width: 100%;
+  margin-top: $xl;
+  margin-bottom: $xl;
+  font-family: 'Oxygen', sans-serif;
+  font-size: $font-xl;
+  font-weight: $fw-md;
+  line-height: $font-auth;
+  letter-spacing: 1px;
+  color: #fff;
+  text-align: center;
+}
+
+.reg_heading {
+  display: flex;
+  align-items: center;
+  font-size: $font-heading;
+  line-height: $font-heading;
+  font-weight: $fw-heading;
+  color: #1b1e3d;
+}
+
+// ## REGISTER FORM                            INPUT FIELDS
+// ########################################################
+.reg_input-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: $row-height-md;
+  margin-top: $xs;
+}
+
+.reg_input {
+  display: block;
+  width: 100%;
+  height: $row-height-md;
+  padding-left: $md;
+  box-shadow: none;
+  -webkit-appearance: none;
+  font-size: $font-xl;
+  line-height: $font-xl;
+  font-weight: $fw-md;
+}
+
+.reg_input::placeholder {
+  color: $adam-sub-heading;
+}
+
+.reg_empty {
+  color: $adam-sub-heading;
+}
+
+.reg_filled {
+  color: $adam-heading;
+}
+
+.reg_input-normal {
+  box-sizing: border-box;
+  background: transparent;
+  border-top: $border-xxs solid $adam-app-border;
+  border-bottom: $border-xxs solid $adam-app-border;
+  border-left: $border-xxs solid $adam-app-border; // why does this have a border defined
+  border-right: $border-xxs solid $adam-app-border; // and not use primary-border?
+  border-radius: 0;
+  outline: 0;
+  background-color: $adam-input-normal;
+}
+
+.reg_input-error {
+  box-sizing: border-box;
+  background: transparent;
+  border-top: $border-xxs solid #c93c31;
+  border-bottom: $border-xxs solid #c93c31;
+  border-left: $border-xxs solid #c93c31;
+  border-right: $border-xxs solid #c93c31;
+  outline: 0;
+  color: #c93c31;
+  background-color: $adam-input-error;
+}
+
+.reg_error_text {
+  padding-top: $xs;
+  padding-left: $xs;
+  padding-bottom: $xs;
+  font-style: italic;
+  font-size: $font-md;
+  line-height: $font-xl;
+  color: #db8f6b;
+}
+
+// Password Quality styles are applied in-line
+// See `./common/PasswordQuality.js`
+
+// ## REGISTER FORM                           SUBMIT BUTTON
+// ########################################################
+#reg_button-container {
+  @include flex(column);
+  @include flex-center;
+  flex: 0;
+  margin-top: 0.8rem;
+}
+
+#reg_button {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 100%;
+  padding-top: $md;
+  padding-bottom: $md;
+  color: $adam-white;
+  background-color: #1b1e3d;
+  border-width: 1px;
+  border-color: rgba(255, 255, 255, 0.2);
+  text-align: center;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-size: $font-xl;
+  line-height: $font-xl;
+  font-weight: $fw-heading;
+}
+
+#reg_button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+#reg_button:active {
+  background-color: #1b1e3d;
+}
+
+// ## REGISTER FORM                    BACK TO SIGN IN LINK
+// ########################################################
+#reg_backLink-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+}
+
+#reg_backLink {
+  outline: none;
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 6.4rem;
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  font-weight: 400;
+  color: #fff;
+  text-decoration: none;
+}
+
+.signin_registerLink:hover {
+  color: #693e48;
+}
+
+.signin_registerLink:active {
+  color: #1b1e3d;
+}

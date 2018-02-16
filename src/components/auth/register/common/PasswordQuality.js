@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import '../Register.css'
 
 /**
  * This utility function is executed on keypress and tests a password string for
@@ -45,8 +46,10 @@ const testPassword = (p) => {
 }
 
 /**
- * The Password Quality Component displays the quality-check result directly above
- * the Text Input Component that specifies it.
+ * The Password Quality Component displays the quality-check result
+ * directly above the Text Input Component that has checking enabled.
+ * Quality checking is enabled if the Text Input's `passwordEntry`
+ * prop is set to true.
  * @param {*} props The Component's props
  */
 const PasswordQuality = (props) => {
@@ -77,7 +80,7 @@ const PasswordQuality = (props) => {
         flexDirection: 'row',
         position: 'relative',
         marginTop: '0.8rem',
-        marginBottom: '-0.8rem',
+        marginBottom: '-0.2rem',
       }}
     >
       <div
@@ -93,6 +96,9 @@ const PasswordQuality = (props) => {
           position: 'absolute',
           right: '0.4rem',
           top: '-0.2rem',
+          marginTop: '1.8rem',
+          marginRight: '0.1rem',
+          color: '#1b1e3d',
         }}
       >
         {quality[score].label}

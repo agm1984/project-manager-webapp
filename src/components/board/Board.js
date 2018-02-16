@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { DragDropContext } from 'react-beautiful-dnd'
+import Nav from '../nav/Nav'
 import Column from './Column'
 import './Board.css'
 
@@ -17,41 +18,41 @@ class Board extends Component {
       onHold: [
         {
           id: 'item-1',
-          content: 'Call Gary',
+          title: 'Call Gary',
         },
         {
           id: 'item-2',
-          content: 'Make pancakes for Sally',
+          title: 'Make pancakes for Sally',
         },
       ],
       inProgress: [
         {
           id: 'item-3',
-          content: 'Complete back propogation',
+          title: 'Complete back propogation',
         },
         {
           id: 'item-4',
-          content: 'Start animated logo sequence',
+          title: 'Start animated logo sequence',
         },
       ],
       needsReview: [
         // {
         //   id: 'item-5',
-        //   content: 'Sketch Ronald\'s website',
+        //   title: 'Sketch Ronald\'s website',
         // },
         // {
         //   id: 'item-6',
-        //   content: 'Edit Sandwich photography',
+        //   title: 'Edit Sandwich photography',
         // },
       ],
       approved: [
         {
           id: 'item-7',
-          content: 'Design typography',
+          title: 'Design typography',
         },
         {
           id: 'item-8',
-          content: 'Get new draft',
+          title: 'Get new draft',
         },
       ],
     }
@@ -113,41 +114,31 @@ class Board extends Component {
     const {
       onHold, inProgress, needsReview, approved,
     } = this.state
-    return (
-      <DragDropContext onDragEnd={this.onDragEnd}>
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-            }}
-          >
-            <div>
-              <div>ON HOLD</div>
+    return [
+      <Nav key="Nav" />,
+      <DragDropContext onDragEnd={this.onDragEnd} key="Board">
+        <div id="board_wrapper">
+          <div id="board_container">
+            <div className="board_column-container">
+              <div className="board_column-heading">ON HOLD</div>
               <Column id="onHold" list={onHold} />
             </div>
-            <div>
-              <div>IN PROGRESS</div>
+            <div className="board_column-container">
+              <div className="board_column-heading">IN PROGRESS</div>
               <Column id="inProgress" list={inProgress} />
             </div>
-            <div>
-              <div>NEEDS REVIEW</div>
+            <div className="board_column-container">
+              <div className="board_column-heading">NEEDS REVIEW</div>
               <Column id="needsReview" list={needsReview} />
             </div>
-            <div>
-              <div>APPROVED</div>
+            <div className="board_column-container">
+              <div className="board_column-heading">APPROVED</div>
               <Column id="approved" list={approved} />
             </div>
           </div>
         </div>
-      </DragDropContext>
-    )
+      </DragDropContext>,
+    ]
   }
 }
 

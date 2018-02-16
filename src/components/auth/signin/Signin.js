@@ -4,9 +4,9 @@ import { connect } from 'react-redux'
 import { graphql, compose } from 'react-apollo'
 import AuthForm from './AuthForm'
 import AuthRegisterLink from './AuthRegisterLink'
-import Footer from '../../Footer'
 import { handleSignInSuccess } from './auth_actions'
 import SIGN_IN_MUTATION from './auth_mutations'
+import './Signin.css'
 
 class SignInView extends Component {
   constructor(props) {
@@ -35,21 +35,22 @@ class SignInView extends Component {
       const token = res.data.login
       return this.props.handleSignInSuccess(token)
     } catch (e) {
-      return this.setState({ serverErrors: [e.graphQLErrors[0].message] })
+      return this.setState({
+        serverErrors: [e.graphQLErrors[0].message],
+      })
     }
   }
 
   render() {
     return (
-      <div id="auth_wrapper">
-        <div id="auth_container">
+      <div id="signin_wrapper">
+        <div id="signin_container">
           <AuthForm
             onSignInSubmit={props => this.handleLoginAttempt(props)}
             maybeShowErrors={this.state.serverErrors}
           />
           <AuthRegisterLink />
         </div>
-        <Footer />
       </div>
     )
   }

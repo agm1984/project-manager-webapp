@@ -1,3 +1,33 @@
+@import "../../styles/variables/_colors.scss";
+@import "../../styles/variables/_sizes.scss";
+@import "../../styles/mixins/_mixins.scss";
+
+#board_wrapper {
+  @include flex(column);
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 20rem;
+}
+
+#board_container {
+  @include flex(row);
+}
+
+.board_column-container {
+  padding: 8px;
+}
+
+.board_column-heading {
+  @include flex(row);
+  @include flex-center;
+  font-size: $font-heading;
+  line-height: $font-heading;
+  font-weight: $fw-heading;
+  color: #1b1e3d;
+  padding-bottom: 8px;
+  letter-spacing: 0.2em;
+}
+
 // /* $ease-out: all .3s cubic-bezier(0.23, 1, 0.32, 1);
 // $on-hold: #FB7D44;
 // $in-progress: #2A92BF;

@@ -2,10 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { reduxForm, Field } from 'redux-form'
 import AuthErrors from './AuthErrors'
-import logo from './adam-logo.png'
-import infoIcon from '../images/info.png'
+import OmniLogo from '../images/omniLogo'
 import AuthInput from './AuthInput'
 import validate from './auth_validator'
+import './Signin.css'
 
 const AuthForm = (props) => {
   const {
@@ -13,19 +13,12 @@ const AuthForm = (props) => {
   } = props
   return (
     <form
-      id="auth_form"
       onSubmit={handleSubmit(onSignInSubmit)}
       autoComplete="off"
     >
-      <div id="auth_logo-container">
-        <img
-          id="auth_logo"
-          src={logo}
-          alt="Adam Mackintosh Logo"
-        />
-      </div>
-      <div id="auth_heading">
-        Sign in to the Mackintosh Portfolio Admin Area
+      <OmniLogo height={330} />
+      <div id="signin_heading">
+        Sign in to your administrative account
         <br />with your <strong>email</strong> and <strong>password</strong>
       </div>
       <AuthErrors errors={maybeShowErrors} />
@@ -41,39 +34,14 @@ const AuthForm = (props) => {
         name="person_password"
         placeholder="Password"
       />
-      <div className="auth_signin_button-container">
+      <div id="signin_button-container">
         <button
           disabled={pristine || submitting}
-          className="auth_signin_button-button"
+          id="signin_button"
           type="submit"
         >
           SIGN IN
         </button>
-      </div>
-      <div
-        id="auth_heading"
-        style={{
-          position: 'relative',
-          marginBottom: 0,
-          backgroundColor: 'rgba(210, 227, 243, 0.5)',
-          border: '1px solid #88ABC7',
-          color: 'black',
-        }}
-      >
-        <img
-          style={{
-            position: 'absolute',
-            height: '30px',
-            width: '30px',
-            top: '7px',
-            left: '10px',
-            opacity: 0.75,
-          }}
-          src={infoIcon}
-          alt="Info"
-        />
-        To skip registration, sign in with credentials:<br />
-        E: <b>demo@demo.com</b> / P: <b>demodemo</b>
       </div>
     </form>
   )

@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import '../Register.css'
 
 /**
  * When Back is pressed, the user should be navigated back to the Sign In View.
@@ -8,11 +9,10 @@ import PropTypes from 'prop-types'
 const RegBackLink = (props) => {
   const { onBack } = props
   return (
-    <div className="auth_register">
+    <div id="reg_backLink-container">
       <button
         onClick={onBack}
-        className="auth_register-link"
-        style={{ marginTop: '3.2rem', color: '#b3b3b3' }}
+        id="reg_backLink"
       >
         Back
       </button>

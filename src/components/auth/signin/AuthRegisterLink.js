@@ -1,12 +1,12 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import './Signin.css'
 
 const AuthRegisterLink = () => (
-  <div className="auth_register">
+  <div id="signin_registerLink-container">
     <NavLink
-      to="/admin/register"
-      className="animated auth_register-link flash"
-      style={{ marginTop: '3.2rem' }}
+      to="/register"
+      className="signin_registerLink animated flash"
     >
       Sign Up
     </NavLink>

@@ -7,10 +7,10 @@ import RegSection from './common/RegSection'
 import RegErrors from './common/RegErrors'
 import RegInput from './common/RegInput'
 import RegBackLink from './common/RegBackLink'
-import Footer from '../../Footer'
 import { handlePrevStep, handleCompletion } from './reg_actions'
 import validate from './reg_validator'
 import REGISTER_MUTATION from './reg_mutations'
+import './Register.css'
 
 class EnterPassword extends Component {
   constructor(props) {
@@ -32,7 +32,9 @@ class EnterPassword extends Component {
       const { token } = res.data.register
       return this.props.handleCompletion(token)
     } catch (e) {
-      return this.setState({ serverErrors: [e.graphQLErrors[0].message] })
+      return this.setState({
+        serverErrors: [e.graphQLErrors[0].message],
+      })
     }
   }
   render() {
@@ -44,8 +46,8 @@ class EnterPassword extends Component {
         id="reg_form"
         onSubmit={handleSubmit(this.handleRegSubmit)}
       >
-        <div id="auth_wrapper">
-          <div id="auth_container">
+        <div id="reg_wrapper">
+          <div id="reg_container">
             <RegSection heading="PASSWORD">
               <RegErrors errors={this.state.serverErrors} />
               <Field
@@ -61,10 +63,10 @@ class EnterPassword extends Component {
                 name="person_confirmPassword"
                 placeholder="Confirm Password"
               />
-              <div className="auth_signin_button-container">
+              <div id="reg_button-container">
                 <button
                   disabled={pristine || submitting || !valid}
-                  className="auth_signin_button-button"
+                  id="reg_button"
                   type="submit"
                 >
                   NEXT STEP
@@ -73,7 +75,6 @@ class EnterPassword extends Component {
             </RegSection>
             <RegBackLink onBack={() => handlePrevStep('ENTER_LOCATION')} />
           </div>
-          <Footer />
         </div>
       </form>
     )

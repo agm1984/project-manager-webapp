@@ -7,13 +7,17 @@ const getItemStyle = (isDragging, draggableStyle) => ({
   userSelect: 'none',
   padding: grid * 2,
   margin: `0 0 ${grid}px 0`,
-  background: isDragging ? 'lightgreen' : 'grey',
+  color: '#fff',
+  background: isDragging ? '#db8f6b' : 'none',
+  border: '1px solid rgba(255,255,255,0.2)',
   ...draggableStyle,
 })
 const getListStyle = isDraggingOver => ({
-  background: isDraggingOver ? 'lightblue' : 'lightgrey',
+  backgroundColor: isDraggingOver ? 'rgba(255, 255, 255, 0.1)' : 'rgba(255, 255, 255, 0.05)',
+  boxShadow: '-8px 14px 40px 0px rgba(0, 0, 0, 0.2)',
   padding: grid,
   width: 250,
+  minHeight: 500,
 })
 
 const Column = (props) => {
@@ -38,7 +42,7 @@ const Column = (props) => {
                       provided.draggableProps.style,
                     )}
                   >
-                    {item.content}
+                    {item.title}
                   </div>
                   {provided.placeholder}
                 </div>

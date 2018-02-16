@@ -2,10 +2,12 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
+import UserDetails from './UserDetails'
 import handleGetPersonAvatar from './nav_actions'
 import { handleSignOut } from '../auth/signin/auth_actions'
-import logo from './images/Mackintosh-logo.png'
+import jacky from './images/Jacky.jpg'
 import signout from './images/signout.png'
+import './Nav.css'
 
 class NavContainer extends Component {
   /**
@@ -42,14 +44,15 @@ class NavContainer extends Component {
     return (
       <div id="nav">
         <nav id="nav_elements">
-          <div id="nav_logo-container">
-            <div>
-              <img
-                id="nav_logo"
-                src={logo}
-                alt="Mackintosh Logo"
+          <div id="nav_left-container">
+            <NavLink
+              to="/profile"
+              style={{ textDecoration: 'none' }}
+            >
+              <UserDetails
+                avatar={jacky}
               />
-            </div>
+            </NavLink>
           </div>
           <div id="nav_menu">
             <div className="nav_menu-item">
@@ -58,7 +61,7 @@ class NavContainer extends Component {
                 className="nav_link"
                 activeClassName="nav_link-active"
               >
-                DASHBOARD
+                BOARD
               </NavLink>
             </div>
             <Spacer />
@@ -68,7 +71,7 @@ class NavContainer extends Component {
                 className="nav_link"
                 activeClassName="nav_link nav_link-active"
               >
-                PEOPLE
+                CLIENTS
               </NavLink>
             </div>
             <Spacer />
@@ -81,30 +84,8 @@ class NavContainer extends Component {
                 ARTICLES
               </NavLink>
             </div>
-            <Spacer />
-            <div className="nav_menu-item">
-              <NavLink
-                to="/admin/devtools"
-                className="nav_link"
-                activeClassName="nav_link-active"
-              >
-                DEV TOOLS
-              </NavLink>
-            </div>
           </div>
           <div id="nav_user">
-            <NavLink
-              to="/admin/profile"
-              className="nav_user-signout"
-            >
-              {this.props.person_avatar && (
-                <img
-                  id="nav_user-avatar"
-                  src={this.props.person_avatar}
-                  alt="User Avatar"
-                />
-              )}
-            </NavLink>
             <NavLink
               to="/admin/signin"
               className="nav_user-signout"
@@ -130,7 +111,6 @@ NavContainer.propTypes = {
   }).isRequired,
   handleGetPersonAvatar: PropTypes.func.isRequired,
   handleSignOut: PropTypes.func.isRequired,
-  person_avatar: PropTypes.string.isRequired,
 }
 
 /**

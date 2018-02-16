@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import PasswordQuality from './PasswordQuality'
+import '../Register.css'
 
 const RegInput = (props) => {
   const {
@@ -8,24 +9,22 @@ const RegInput = (props) => {
   } = props
   const { touched, error } = meta
   const maybeHasValue = (input.value)
-    ? 'edit_filled'
-    : 'edit_empty'
+    ? 'reg_filled'
+    : 'reg_empty'
   const maybeHasError = (touched && error)
-    ? 'form-text-input error'
-    : `form-text-input normal ${maybeHasValue}`
+    ? 'reg_input reg_input-error'
+    : `reg_input reg_input-normal ${maybeHasValue}`
   return (
-    <div className="edit_rowcontainer">
+    <div className="reg_input-container">
       {passwordEntry && <PasswordQuality test={input.value} />}
-      <div className="row-md">
-        <input
-          placeholder={placeholder}
-          name={name}
-          type={type}
-          className={maybeHasError}
-          {...input}
-        />
-      </div>
-      {touched && (error && <span className="auth_field_error">{error}</span>)}
+      <input
+        placeholder={placeholder}
+        name={name}
+        type={type}
+        className={maybeHasError}
+        {...input}
+      />
+      {touched && (error && <span className="reg_error_text">{error}</span>)}
     </div>
   )
 }

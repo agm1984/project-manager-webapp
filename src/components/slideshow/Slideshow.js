@@ -14,7 +14,12 @@ const Slideshow = () => {
       >
         <div className="slider__content" id="slider-content">
           <div className="slider__images">
-            <div className="slider__images-item slider__images-item--active" data-id="1"><img src="https://lh3.googleusercontent.com/aC9nyW5dhaYFmWD8fcf8DApjpH08eHEkbCHqmUPHRQ5T3jK-QyNKZYVMehmrvyPdEA_KxWvgZ3_kyOOYOAv99Ow3UoKSvEloleVKGSfLOwOyDV3Q6Dwi1G-NYoa9-t_ofmmskE6BYnVIOnIz2HWlMcijzIEwvKAL_R4z63DaLgG0z_OcGiSQHunwGAPXrBQUv42ZXuIMODq4zxDHczSxJ72b0-_udtdQK3JuT2X8nXCwFoF7GxmOpzXS0H5f50DuCbXoXcx-O7bgBMCXZdMpTxB27-wdXeLmxpYUySXgjSN2NAKmK16DmGLYvw5tMlrqwb8h4MJEEbXjP1pjPxXsahb7UZseEGyn80uLjATANJvusyJWCtzkkxYXPz-yI1rDvfEJKe2eyA-5AvFlzFBSwBMASn8f7mXinUrXMMREkJQjoi89NfZ91G7253OEVQOqcWxddiYtcHCO5v6Pl3QfV2SUTWXgggscDSY2ezjSPpYERNTXnIM_aCyWmIG7ybrfqOB0eVYBAgynyuPVbjd4KuZWZq2Dfu33HX1RuPKglbOuZGD1QbpJnruvUVkAmjDXI40ENN7X=w1600-h766" /></div>
+            <div className="slider__images-item slider__images-item--active" data-id="1">
+              <img
+                src="https://lh3.googleusercontent.com/aC9nyW5dhaYFmWD8fcf8DApjpH08eHEkbCHqmUPHRQ5T3jK-QyNKZYVMehmrvyPdEA_KxWvgZ3_kyOOYOAv99Ow3UoKSvEloleVKGSfLOwOyDV3Q6Dwi1G-NYoa9-t_ofmmskE6BYnVIOnIz2HWlMcijzIEwvKAL_R4z63DaLgG0z_OcGiSQHunwGAPXrBQUv42ZXuIMODq4zxDHczSxJ72b0-_udtdQK3JuT2X8nXCwFoF7GxmOpzXS0H5f50DuCbXoXcx-O7bgBMCXZdMpTxB27-wdXeLmxpYUySXgjSN2NAKmK16DmGLYvw5tMlrqwb8h4MJEEbXjP1pjPxXsahb7UZseEGyn80uLjATANJvusyJWCtzkkxYXPz-yI1rDvfEJKe2eyA-5AvFlzFBSwBMASn8f7mXinUrXMMREkJQjoi89NfZ91G7253OEVQOqcWxddiYtcHCO5v6Pl3QfV2SUTWXgggscDSY2ezjSPpYERNTXnIM_aCyWmIG7ybrfqOB0eVYBAgynyuPVbjd4KuZWZq2Dfu33HX1RuPKglbOuZGD1QbpJnruvUVkAmjDXI40ENN7X=w1600-h766"
+                alt=""
+              />
+            </div>
             <div className="slider__images-item" data-id="2">
               <img
                 src="https://lh3.googleusercontent.com/4Bn4zdADhWhegRcmxS1xmHxbxIBzEgB8ADfeaCmiwT9iF7y2mN9Wc5L7gFLxUo2bgl3V-97EFrOyE9OXfkvip3pkpNxYe50GiapeT41p7D7tNJm3oEdV8Y-7toGyvz0UZ8VgDACVTUEdzzVVm2NtQSCroSvmo4gL3u0ty-KAyKnah9vIitfw2Rs1MuNzQq6vmzUcw1_4obGAKmk_Nx0dD33RSy1jbT8D61kxERbOu0pHUciywIO2EeUX8iOcJfHHQwVW3lGYcZKSiimGjBUvzHILrSpVZQ1xUlj0U21EeY4Hil1ZaJQaX47hQezcxZj7H8GyWhNv2TzQ7EU8DS3_MonCLxXlnXfk-80nncPa8DxN_UlIzJeOPDiWPSLXFaDJn_ywCutx-0onw5rcSC815_krGHXKt3L_weD5pq_e_2WI3BRZndcR2jOYLz9BiUp52ouDBIDw2OzrDtUgxne9NaQ2tOJwaIR26N1un92ChTLhXZF2F2NoS3Do96TY6A5dP6RsXQzK6G0Z6oj5XtYx-p--PrdP8wiDPAzOqXQkXbJaX8l2qPi3nTYrD8rB-eKyL2E1q9xQ=w1600-h766"
