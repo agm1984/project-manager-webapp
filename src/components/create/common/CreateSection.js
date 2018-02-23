@@ -1,14 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import './Create.css'
 
 const CreateSection = (props) => {
   const { isTop, heading, children } = props
   const sectionPlacement = isTop
-    ? 'edit_container row-margin-lg'
-    : 'edit_container row-margin-sm'
+    ? 'create_section create_section-margin-lg'
+    : 'create_section create_section-margin-sm'
   return (
     <div className={sectionPlacement}>
-      <div className="edit_heading">
+      <div className="create_section_heading">
         {heading}
       </div>
       {children}

@@ -1,25 +1,26 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import './View.css'
 
 const GetSubNav = (props) => {
   const {
     type, recordLabel, recordStatus, onClickEdit,
   } = props
   return (
-    <div className="edit_subnav">
-      <div className="edit_subnav-title">
+    <div id="view_subnav">
+      <div id="view_subnav_record">
         VIEW {type.toUpperCase()}
-        <span className="subnav_title-bold">
+        <span id="view_subnav_record-label">
           {recordLabel}
         </span>
         -
-        <span className="subnav_active">
+        <span id="view_subnav_record-status">
           {recordStatus}
         </span>
       </div>
-      <div className="edit_subnav-right-side">
+      <div id="view_subnav_edit">
         <button
-          className="subnav_deactivate"
+          id="view_subnav_edit-button"
           onClick={onClickEdit}
         >
           EDIT

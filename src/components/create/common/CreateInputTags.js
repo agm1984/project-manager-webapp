@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import TagsInput from 'react-tagsinput'
+import './Create.css'
+import './CreateTags.css'
 
 class CreateInputTags extends Component {
   constructor(props) {
@@ -25,23 +27,32 @@ class CreateInputTags extends Component {
     } = this.props
     const { touched, error } = meta
     return (
-      <div className="edit_rowcontainer">
-        <label className="edit_row" htmlFor={name}>
-          <div className="edit_row-label">
+      <div className="create_row-container">
+        <label className="create_row" htmlFor={name}>
+          <div className="create_row-label">
             {label}
-            {required && <span className="edit_asterisk">*</span>}
+            {required && <span className="create_asterisk">*</span>}
           </div>
-          <div className="edit_row-item">
+          <div className="create_row-item">
             <TagsInput
               name={name}
               value={this.state.tags}
               onChange={this.handleUpdateTags}
               addKeys={[9, 13]}
+              className="create_tags"
+              inputProps={{
+                className: 'create_tags-placeholder',
+                placeholder: 'Add a tag',
+              }}
+              tagProps={{
+                className: 'create_tags-tag',
+                classNameRemove: 'create_tags-remove',
+              }}
               onlyUnique
             />
           </div>
         </label>
-        {touched && (error && <span className="edit_required">{error}</span>)}
+        {touched && (error && <span className="create_required">{error}</span>)}
       </div>
     )
   }

@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Geosuggest from 'react-geosuggest'
+import './Create.css'
+
 // Redux-form stuff
 // https://github.com/ubilabs/react-geosuggest/issues/275
 
@@ -11,19 +13,19 @@ class CreateGeoSuggest extends Component {
     } = this.props
     const { touched, error } = meta
     const maybeHasValue = (input.value)
-      ? 'edit_filled'
-      : 'edit_empty'
+      ? 'create_filled'
+      : 'create_empty'
     const maybeHasError = (touched && error)
-      ? 'form-text-input error'
-      : `form-text-input normal ${maybeHasValue}`
+      ? 'create_input create_input-error'
+      : `create_input create_input-normal ${maybeHasValue}`
     return (
-      <div className="edit_rowcontainer">
-        <label className="edit_row" htmlFor={name}>
-          <div className="edit_row-label">
+      <div className="create_row-container">
+        <label className="create_row" htmlFor={name}>
+          <div className="create_row-label">
             {label}
-            {required && <span className="edit_asterisk">*</span>}
+            {required && <span className="create_asterisk">*</span>}
           </div>
-          <div className="edit_row-item">
+          <div className="create_row-item">
             <Geosuggest
               ref={(el) => { this._geoSuggest = el }}
               placeholder={placeholder}
@@ -40,7 +42,7 @@ class CreateGeoSuggest extends Component {
             />
           </div>
         </label>
-        {touched && (error && <span className="edit_required">{error}</span>)}
+        {touched && (error && <span className="create_required">{error}</span>)}
       </div>
     )
   }

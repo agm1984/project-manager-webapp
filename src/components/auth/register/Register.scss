@@ -38,6 +38,29 @@
   color: #1b1e3d;
 }
 
+.reg_heading-big {
+  @include flex(row);
+  @include flex-center;
+  font-size: 3.0rem;
+  line-height: 3.0rem;
+  font-weight: $fw-heading;
+  padding-top: 3.2rem;
+  color: #52a749;
+}
+
+.reg_done {
+  width: 100%;
+  margin-top: $xl;
+  margin-bottom: $xl;
+  font-family: 'Oxygen', sans-serif;
+  font-size: $font-xl;
+  font-weight: $fw-md;
+  line-height: $font-auth;
+  letter-spacing: 1px;
+  color: #fff;
+  text-align: center;
+}
+
 // ## REGISTER FORM                            INPUT FIELDS
 // ########################################################
 .reg_input-container {

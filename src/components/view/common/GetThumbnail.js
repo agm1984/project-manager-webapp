@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import noPhoto from '../images/noPhoto.png'
+import './View.css'
 
 const GetThumbnail = (props) => {
   const { name, value } = props
@@ -10,7 +11,7 @@ const GetThumbnail = (props) => {
         <img
           id="view_avatar-photo"
           src={(!value) ? noPhoto : value}
-          alt="Avatar"
+          alt="No Avatar to display"
         />
       </div>
     )

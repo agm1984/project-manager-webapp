@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import ReactQuill from 'react-quill'
+import './View.css'
 
 const GetQuill = (props) => {
   const { content } = props
@@ -10,7 +11,11 @@ const GetQuill = (props) => {
   return (
     <div className="view_row">
       <ReactQuill
-        style={{ marginTop: '0.8rem', width: '100%', height: '100%' }}
+        style={{
+          marginTop: '0.8rem',
+          width: '100%',
+          height: '100%',
+        }}
         theme="bubble"
         modules={modules}
         defaultValue={content}

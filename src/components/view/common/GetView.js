@@ -1,11 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import './View.css'
 
 const GetView = (props) => {
   const { children } = props
   return (
-    <div className="page_container">
-      <div className="edit_wrapper">
+    <div id="view-wrapper">
+      <div id="view-container">
         {children}
       </div>
     </div>

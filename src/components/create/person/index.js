@@ -34,7 +34,7 @@ class PersonCreateContainer extends Component {
       return this.props.dispatch(push('/admin/people'))
     } catch (error) {
       return this.setState({
-        serverErrors: ['Something went wrong creating person record.']
+        serverErrors: ['Something went wrong creating person record.'],
       })
     }
   }

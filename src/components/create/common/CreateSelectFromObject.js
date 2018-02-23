@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import './Create.css'
 
 const CreateGeoSelect = (props) => {
   const {
@@ -7,19 +8,19 @@ const CreateGeoSelect = (props) => {
   } = props
   const { touched, error } = meta
   const maybeHasValue = (input.value)
-    ? 'edit_filled'
-    : 'edit_empty'
+    ? 'create_filled'
+    : 'create_empty'
   const maybeHasError = (touched && error)
-    ? 'edit_select error'
-    : `edit_select normal ${maybeHasValue}`
+    ? 'create_select create_select-error'
+    : `create_select create_select-normal ${maybeHasValue}`
   return (
-    <div className="edit_rowcontainer">
-      <label className="edit_row" htmlFor={name}>
-        <div className="edit_row-label">
+    <div className="create_row-container">
+      <label className="create_row" htmlFor={name}>
+        <div className="create_row-label">
           {label}
-          {required && <span className="edit_asterisk">*</span>}
+          {required && <span className="create_asterisk">*</span>}
         </div>
-        <div className="edit_row-item">
+        <div className="create_row-item">
           <select
             id={name}
             className={maybeHasError}
@@ -29,7 +30,7 @@ const CreateGeoSelect = (props) => {
           >
             <option
               value={0}
-              className="edit_empty"
+              className="create_empty"
             >
               {placeholder}
             </option>
@@ -37,7 +38,7 @@ const CreateGeoSelect = (props) => {
               <option
                 key={opt[`${thingPrefix}serialNumber`]}
                 value={opt[`${thingPrefix}serialNumber`]}
-                className="edit_filled"
+                className="create_filled"
               >
                 {opt[`${thingPrefix}label`]}
               </option>
@@ -45,7 +46,7 @@ const CreateGeoSelect = (props) => {
           </select>
         </div>
       </label>
-      {touched && (error && <span className="edit_required">{error}</span>)}
+      {touched && (error && <span className="create_required">{error}</span>)}
     </div>
   )
 }

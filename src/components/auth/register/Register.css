@@ -46,6 +46,29 @@
   font-weight: 700;
   color: #1b1e3d; }
 
+.reg_heading-big {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.0rem;
+  line-height: 3.0rem;
+  font-weight: 700;
+  padding-top: 3.2rem;
+  color: #52a749; }
+
+.reg_done {
+  width: 100%;
+  margin-top: 3.2rem;
+  margin-bottom: 3.2rem;
+  font-family: 'Oxygen', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 2.2rem;
+  letter-spacing: 1px;
+  color: #fff;
+  text-align: center; }
+
 .reg_input-container {
   display: flex;
   flex-direction: column;

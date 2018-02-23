@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import './View.css'
 
 const GetErrors = (props) => {
   const { errors } = props
@@ -13,8 +14,8 @@ const GetErrors = (props) => {
     return null
   }
   return (
-    <div className="auth_error-container" style={{ marginTop: '3.2rem', width: '100rem' }}>
-      <div className="auth_error-header">
+    <div id="view_error" style={{ marginTop: '3.2rem', width: '100rem' }}>
+      <div id="view_error-header">
         THE FOLLOWING ERRORS OCCURRED:
       </div>
       <ul>

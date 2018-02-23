@@ -1,12 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import './View.css'
 
 const GetBackLink = (props) => {
   const { onLinkPress } = props
   return (
-    <div className="view_back">
+    <div id="view_back">
       <button
-        className="view_back-link"
+        id="view_back-link"
         onClick={onLinkPress}
       >
         Back

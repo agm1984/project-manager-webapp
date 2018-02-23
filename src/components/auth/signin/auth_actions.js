@@ -11,7 +11,7 @@ import {
 export const initApp = () => async (dispatch) => {
   try {
     dispatch({ type: INITIALIZE_APP })
-    const user = await JSON.parse(localStorage.getItem('token@adam'))
+    const user = await JSON.parse(localStorage.getItem('token@omni'))
     if (!user) {
       return dispatch({ type: SIGN_OUT })
     }
@@ -28,7 +28,7 @@ export const initApp = () => async (dispatch) => {
  */
 export const handleSignOut = () => (dispatch) => {
   dispatch({ type: SIGN_OUT })
-  return dispatch(push('/admin/signin'))
+  return dispatch(push('/signin'))
 }
 
 /**
@@ -38,10 +38,10 @@ export const handleSignOut = () => (dispatch) => {
  */
 export const handleSignInSuccess = token => async (dispatch) => {
   try {
-    localStorage.setItem('token@adam', JSON.stringify(token))
+    localStorage.setItem('token@omni', JSON.stringify(token))
     client.resetStore()
     dispatch({ type: AUTH_SUCCESS })
-    return dispatch(push('people'))
+    return dispatch(push('/board'))
   } catch (e) {
     return dispatch({ type: AUTH_FAIL })
   }

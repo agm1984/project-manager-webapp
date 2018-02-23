@@ -5,46 +5,46 @@
 // CREATE & EDIT FORM                                LAYOUT
 // ########################################################
 
-.edit_wrapper {
-  @include flex(column);
-  align-items: center;
-  flex: 1;
-  min-width: 102.4rem;
-  width: 100%;
-  max-width: 160rem; }
+// .edit_wrapper {
+//   @include flex(column);
+//   align-items: center;
+//   flex: 1;
+//   min-width: 102.4rem;
+//   width: 100%;
+//   max-width: 160rem; }
 
-// CREATE & EDIT FORM                               SUB-NAV
-// ########################################################
+// // CREATE & EDIT FORM                               SUB-NAV
+// // ########################################################
 
-.edit_subnav {
-  @include flex(row);
-  @include flex-center;
-  flex: 0;
-  width: 100rem;
-  padding-top: $xl;
-  padding-right: $md;
-  padding-left: $md;
-  margin-bottom: -$xxs;
-  box-sizing: border-box;
-  user-select: none;
-  font-size: $font-xl;
-  line-height: $font-xl;
-  font-weight: $fw-md;
-  color: $adam-sub-heading; }
+// .edit_subnav {
+//   @include flex(row);
+//   @include flex-center;
+//   flex: 0;
+//   width: 100rem;
+//   padding-top: $xl;
+//   padding-right: $md;
+//   padding-left: $md;
+//   margin-bottom: -$xxs;
+//   box-sizing: border-box;
+//   user-select: none;
+//   font-size: $font-xl;
+//   line-height: $font-xl;
+//   font-weight: $fw-md;
+//   color: $adam-sub-heading; }
 
-.edit_subnav-title {
-  font-size: $font-xl;
-  line-height: $font-xl;
-  text-align: left; }
+// .edit_subnav-title {
+//   font-size: $font-xl;
+//   line-height: $font-xl;
+//   text-align: left; }
 
-.edit_subnav-right-side {
-  @include flex(row);
-  @include flex-end;
-  flex: 1; }
+// .edit_subnav-right-side {
+//   @include flex(row);
+//   @include flex-end;
+//   flex: 1; }
 
-.edit_subnav-right-side span {
-  padding-right: $xxs;
-  color: $adam-red; }
+// .edit_subnav-right-side span {
+//   padding-right: $xxs;
+//   color: $adam-red; }
 
 // CREATE & EDIT FORM                    SECTION CONTAINERS
 // ########################################################
@@ -69,52 +69,52 @@
   font-weight: $fw-heading;
   color: $adam-red; }
 
-.edit_rowcontainer {
-  display: flex;
-  flex-direction: column;
-}
+// .edit_rowcontainer {
+//   display: flex;
+//   flex-direction: column;
+// }
 
-.edit_row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  min-height: $row-height-md;
-  margin-top: $xs; }
+// .edit_row {
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+//   justify-content: flex-start;
+//   width: 100%;
+//   min-height: $row-height-md;
+//   margin-top: $xs; }
 
-.edit_row-label {
-  width: 33rem;
-  padding-right: $md;
-  box-sizing: border-box;
-  font-size: $font-xl;
-  line-height: $font-xl;
-  text-align: right;
-  color: #b3b3b3; }
+// .edit_row-label {
+//   width: 33rem;
+//   padding-right: $md;
+//   box-sizing: border-box;
+//   font-size: $font-xl;
+//   line-height: $font-xl;
+//   text-align: right;
+//   color: #b3b3b3; }
 
-.edit_row-item {
-  flex: 1; }
+// .edit_row-item {
+//   flex: 1; }
 
 
 
-// CREATE & EDIT FORM                            TEXT INPUT
-// ########################################################
+// // CREATE & EDIT FORM                            TEXT INPUT
+// // ########################################################
 
-// Also used on Login Form
+// // Also used on Login Form
 
-.form-text-input {
-  display: block;
-  width: 100%;
-  height: $row-height-md;
-  padding-left: $md;
-  box-shadow: none;
-  -webkit-appearance: none;
-  font-size: $font-xl;
-  line-height: $font-xl;
-  font-weight: $fw-md; }
+// .form-text-input {
+//   display: block;
+//   width: 100%;
+//   height: $row-height-md;
+//   padding-left: $md;
+//   box-shadow: none;
+//   -webkit-appearance: none;
+//   font-size: $font-xl;
+//   line-height: $font-xl;
+//   font-weight: $fw-md; }
 
-.form-text-input::placeholder {
-  color: $adam-sub-heading; }
+// .form-text-input::placeholder {
+//   color: $adam-sub-heading; }
 
 // CREATE & EDIT FORM                 MULTI-LINE TEXT INPUT
 // ########################################################
@@ -139,34 +139,34 @@
   line-height: $font-xl;
   font-weight: $fw-md; }
 
-// ## CREATE & EDIT FORM                           CHECKBOX
-// ########################################################
+// // ## CREATE & EDIT FORM                           CHECKBOX
+// // ########################################################
 
-.edit_checkbox {
-  position: relative; }
+// .edit_checkbox {
+//   position: relative; }
 
-.edit_checkbox:after {
-  content: '';
-  position: absolute;
-  width: $md;
-  height: $md;
-  margin-top: -0.2rem;
-  background-color: $adam-input-normal;
-  border: $border-xxs solid $adam-app-border; }
+// .edit_checkbox:after {
+//   content: '';
+//   position: absolute;
+//   width: $md;
+//   height: $md;
+//   margin-top: -0.2rem;
+//   background-color: $adam-input-normal;
+//   border: $border-xxs solid $adam-app-border; }
 
-.edit_checkbox:checked:after {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  content: '\002714';
-  position: absolute;
-  color: $adam-green;
-  width: $md;
-  height: $md;
-  margin-top: -0.2rem;
-  font-size: $font-xl;
-  background-color: $adam-input-normal;
-  border: $border-xxs solid $adam-app-border; }
+// .edit_checkbox:checked:after {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   content: '\002714';
+//   position: absolute;
+//   color: $adam-green;
+//   width: $md;
+//   height: $md;
+//   margin-top: -0.2rem;
+//   font-size: $font-xl;
+//   background-color: $adam-input-normal;
+//   border: $border-xxs solid $adam-app-border; }
 
 // ## CREATE & EDIT FORM                        GEO SUGGEST
 // ########################################################
@@ -214,97 +214,97 @@
 
 
 
-// CREATE & EDIT FORM                                 STATE
-// ########################################################
+// // CREATE & EDIT FORM                                 STATE
+// // ########################################################
 
-.edit_empty {
-  color: $adam-sub-heading; }
+// .edit_empty {
+//   color: $adam-sub-heading; }
 
-.edit_filled {
-  color: $adam-heading; }
+// .edit_filled {
+//   color: $adam-heading; }
 
-.edit_asterisk {
-  padding-left: $xxs;
-  font-size: $font-xl;
-  line-height: $font-xl;
-  font-weight: $fw-heading;
-  color: $adam-red; }
+// .edit_asterisk {
+//   padding-left: $xxs;
+//   font-size: $font-xl;
+//   line-height: $font-xl;
+//   font-weight: $fw-heading;
+//   color: $adam-red; }
 
-.edit_required {
-  margin-left: 33rem;
-  padding-top: $xs;
-  padding-left: $xs;
-  padding-bottom: $xs;
-  font-style: italic;
-  font-size: $font-md;
-  line-height: $font-xl;
-  color: $adam-red; }
+// .edit_required {
+//   margin-left: 33rem;
+//   padding-top: $xs;
+//   padding-left: $xs;
+//   padding-bottom: $xs;
+//   font-style: italic;
+//   font-size: $font-md;
+//   line-height: $font-xl;
+//   color: $adam-red; }
 
-.normal {
-  box-sizing: border-box;
-  background: transparent;
-  border-top: $border-xxs solid $adam-app-border;
-  border-bottom: $border-xxs solid $adam-app-border;
-  border-left: $border-xxs solid $adam-app-border;                        // why does this have a border defined
-  border-right: $border-xxs solid $adam-app-border;                       // and not use primary-border?
-  border-radius: 0;
-  outline: 0;
-  background-color: $adam-input-normal; }
+// .normal {
+//   box-sizing: border-box;
+//   background: transparent;
+//   border-top: $border-xxs solid $adam-app-border;
+//   border-bottom: $border-xxs solid $adam-app-border;
+//   border-left: $border-xxs solid $adam-app-border;                        // why does this have a border defined
+//   border-right: $border-xxs solid $adam-app-border;                       // and not use primary-border?
+//   border-radius: 0;
+//   outline: 0;
+//   background-color: $adam-input-normal; }
 
-.error {
-  box-sizing: border-box;
-  background: transparent;
-  border-top: $border-xxs solid $adam-red;
-  border-bottom: $border-xxs solid $adam-red;
-  border-left: $border-xxs solid $adam-red;
-  border-right: $border-xxs solid $adam-red;
-  //border-radius: 0.1rem 0.1rem 0.1rem 0.1rem;
-  outline: 0;
-  color: $adam-red;
-  background-color: $adam-input-error; }
+// .error {
+//   box-sizing: border-box;
+//   background: transparent;
+//   border-top: $border-xxs solid $adam-red;
+//   border-bottom: $border-xxs solid $adam-red;
+//   border-left: $border-xxs solid $adam-red;
+//   border-right: $border-xxs solid $adam-red;
+//   //border-radius: 0.1rem 0.1rem 0.1rem 0.1rem;
+//   outline: 0;
+//   color: $adam-red;
+//   background-color: $adam-input-error; }
 
-// CREATE & EDIT FORM                               BUTTONS
-// ########################################################
+// // CREATE & EDIT FORM                               BUTTONS
+// // ########################################################
 
-.edit_button-container {
-  display: flex;
-  width: 100%;
-  margin-top: $xl; }
+// .edit_button-container {
+//   display: flex;
+//   width: 100%;
+//   margin-top: $xl; }
 
-.edit_buttons {
-  display: flex;
-  justify-content: center;
-  flex: 1; }
+// .edit_buttons {
+//   display: flex;
+//   justify-content: center;
+//   flex: 1; }
 
-.edit_button-grey {
-  width: 30rem;
-  padding-top: $md;
-  padding-bottom: $md;
-  box-sizing: border-box;
-  background-color: $adam-sub-heading;
-  border: none;
-  color: $adam-white;
-  border-radius: $border-xxs $border-xxs $border-xxs $border-xxs;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: $font-xl;
-  line-height: $font-xl;
-  font-weight: $fw-heading; }
+// .edit_button-grey {
+//   width: 30rem;
+//   padding-top: $md;
+//   padding-bottom: $md;
+//   box-sizing: border-box;
+//   background-color: $adam-sub-heading;
+//   border: none;
+//   color: $adam-white;
+//   border-radius: $border-xxs $border-xxs $border-xxs $border-xxs;
+//   text-align: center;
+//   text-decoration: none;
+//   display: inline-block;
+//   font-size: $font-xl;
+//   line-height: $font-xl;
+//   font-weight: $fw-heading; }
 
-.edit_button-red {
-  width: 30rem;
-  margin-left: $xl;
-  padding-top: $md;
-  padding-bottom: $md;
-  box-sizing: border-box;
-  background-color: $adam-red;
-  border: none;
-  color: $adam-white;
-  border-radius: $border-xxs $border-xxs $border-xxs $border-xxs;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: $font-xl;
-  line-height: $font-xl;
-  font-weight: $fw-heading; }
+// .edit_button-red {
+//   width: 30rem;
+//   margin-left: $xl;
+//   padding-top: $md;
+//   padding-bottom: $md;
+//   box-sizing: border-box;
+//   background-color: $adam-red;
+//   border: none;
+//   color: $adam-white;
+//   border-radius: $border-xxs $border-xxs $border-xxs $border-xxs;
+//   text-align: center;
+//   text-decoration: none;
+//   display: inline-block;
+//   font-size: $font-xl;
+//   line-height: $font-xl;
+//   font-weight: $fw-heading; }

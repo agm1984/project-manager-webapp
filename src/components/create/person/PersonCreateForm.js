@@ -129,18 +129,18 @@ const CreatePersonForm = (props) => {
           placeholder="This is about text..."
         />
       </CreateSection>
-      <div className="edit_button-container">
-        <div className="edit_buttons">
+      <div id="create_buttons-container">
+        <div id="create_buttons">
           <button
             disabled={submitting}
-            className="edit_button-grey"
+            id="create_button-cancel"
             onClick={handleBackPress}
           >
             CANCEL
           </button>
           <button
             disabled={pristine || submitting}
-            className="edit_button-red"
+            id="create_button-submit"
             type="submit"
           >
             CREATE
@@ -155,8 +155,6 @@ CreatePersonForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
   onCreateSubmit: PropTypes.func.isRequired,
   handleBackPress: PropTypes.func.isRequired,
-  change: PropTypes.func.isRequired,
-  untouch: PropTypes.func.isRequired,
   pristine: PropTypes.bool.isRequired,
   submitting: PropTypes.bool.isRequired,
 }

@@ -1,0 +1,68 @@
+@import "../../../styles/variables/_colors.scss";
+@import "../../../styles/variables/_sizes.scss";
+@import "../../../styles/mixins/_mixins.scss";
+
+.create_tags {
+  display: flex;
+  align-items: center;
+  // background-color: #fafafa;
+  border: $border-xxs solid rgba(255, 255, 255, 0.2);
+  // border: 1px solid #e5e5e5;
+  overflow: hidden;
+  padding: 0;
+  height: $row-height-md;
+  padding-left: $md;
+}
+
+.react-tagsinput--focused {
+  border-color: #a5d24a;
+}
+
+.create_tags-tag {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #cde69c;
+  border-radius: 2px;
+  border: 1px solid #a5d24a;
+  color: #638421;
+  font-weight: $fw-md;
+  font-size: $font-xl;
+  line-height: $font-xl;
+  height: 32px;
+  margin-right: $xs;
+  padding: 0 $xs 0 $xs;
+}
+
+.create_tags > span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+// REMOVE BUTTON
+.create_tags-remove {
+  cursor: pointer;
+  font-weight: bold;
+  padding-left: $xs;
+}
+
+.create_tags-tag a::before {
+  content: " ×";
+}
+
+.create_tags-placeholder {
+  background: transparent;
+  border: 0;
+  color: #000;
+  //font-family: 'Oxygen', sans-serif;
+  font-weight: $fw-md;
+  font-size: $font-xl;
+  line-height: $font-xl;
+  outline: none;
+  width: 80px;
+}
+
+.create_tags-placeholder::placeholder {
+  color: $adam-sub-heading;
+}

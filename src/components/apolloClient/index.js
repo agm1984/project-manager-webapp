@@ -18,7 +18,7 @@ const httpLink = createHttpLink({
 })
 const middlewareLink = setContext(() => ({
   headers: {
-    authorization: JSON.parse(localStorage.getItem('token@adam')) || null,
+    authorization: JSON.parse(localStorage.getItem('token@omni')) || null,
   },
 }))
 const link = middlewareLink.concat(httpLink)

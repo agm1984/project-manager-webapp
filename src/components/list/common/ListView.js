@@ -1,11 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+// import Nav from '../nav/Nav'
+import Nav from '../../nav/Nav'
+import './List.css'
+import './ReactTable.css'
 
 const ListView = (props) => {
   const { children } = props
   return (
-    <div className="page_container">
-      <div className="list_wrapper">
+    <div id="list-container" key="ListView">
+      <div id="list-wrapper">
+        <Nav key="Nav" />
         {children}
       </div>
     </div>

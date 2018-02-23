@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { DragDropContext } from 'react-beautiful-dnd'
+import LevelUp from '../levelup/LevelUp'
 import Nav from '../nav/Nav'
 import Column from './Column'
 import './Board.css'
@@ -114,9 +115,8 @@ class Board extends Component {
     const {
       onHold, inProgress, needsReview, approved,
     } = this.state
-    return [
-      <Nav key="Nav" />,
-      <DragDropContext onDragEnd={this.onDragEnd} key="Board">
+    return (
+      <DragDropContext onDragEnd={this.onDragEnd}>
         <div id="board_wrapper">
           <div id="board_container">
             <div className="board_column-container">
@@ -136,9 +136,13 @@ class Board extends Component {
               <Column id="approved" list={approved} />
             </div>
           </div>
+          <div>
+            <button onClick={() => console.log('CLICKDE HERE')}>
+            </button>
+          </div>
         </div>
-      </DragDropContext>,
-    ]
+      </DragDropContext>
+    )
   }
 }
 

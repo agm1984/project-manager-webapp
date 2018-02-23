@@ -32,7 +32,7 @@ export const handlePrevStep = gotoStep => ({
  * @param {string} token JWT Token
  */
 export const handleCompletion = token => (dispatch) => {
-  localStorage.setItem('token@adam', JSON.stringify(token))
+  localStorage.setItem('token@omni', JSON.stringify(token))
   return dispatch({
     type: REGISTRATION_COMPLETE,
     payload: 'DONE',
@@ -46,13 +46,13 @@ export const handleCompletion = token => (dispatch) => {
 export const handleFirstTimeSignIn = () => async (dispatch) => {
   try {
     dispatch({ type: INITIALIZE_APP })
-    const user = await JSON.parse(localStorage.getItem('token@adam'))
+    const user = await JSON.parse(localStorage.getItem('token@omni'))
     if (!user) {
       return dispatch({ type: SIGN_OUT })
     }
     client.resetStore()
     dispatch({ type: AUTH_SUCCESS })
-    return dispatch(push('/admin/dashboard'))
+    return dispatch(push('/board'))
   } catch (e) {
     return dispatch({ type: SIGN_OUT })
   }

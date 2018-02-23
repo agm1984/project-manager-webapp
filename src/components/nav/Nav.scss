@@ -9,7 +9,7 @@ $nav-side-padding: 3.2rem;
 $nav-item-height: 3.2rem;
 $nav-spacer-margin: 1.6rem;
 
-#nav {
+.nav {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -17,10 +17,16 @@ $nav-spacer-margin: 1.6rem;
 	@include flex-center;
 	width: 100%;
 	height: $nav-height;
-	// border-bottom: $border-xxs solid $adam-app-border;
 	user-select: none;
 	z-index: 1;
 	padding-top: 1.6rem;
+	padding-bottom: 1.6rem;
+}
+
+// Press CTRL+F for isScrolling
+.isScrolling {
+	background-color: #1b1e3d;
+	transition: background-color 100ms ease-in-out;
 }
 
 #nav:before {
@@ -132,7 +138,7 @@ $nav-spacer-margin: 1.6rem;
 }
 
 #nav_left_user-xpDenominator {
-	color: #1b1e3d;
+	color: $adam-sub-heading;
 	font-weight: 700;
 }
 
@@ -145,6 +151,7 @@ $nav-spacer-margin: 1.6rem;
 }
 
 .nav_menu-item {
+	position: relative;
 	outline: none;
 	height: 100%;
 	@include flex(row);
@@ -171,27 +178,26 @@ a.nav_link:visited {
 }
 
 a.nav_link:hover {
-	color: $adam-black;
+	color: #db8f6b;
 }
 
 a.nav_link:active {
-	color: $adam-red;
+	color: #db8f6b;
 }
 
 a.nav_link-active {
-	color: $adam-red;
 	margin-top: 3.3rem;
 }
 
 a.nav_link-active:visited {
-	color: $adam-red;
+	color: #fff;
 }
 
 a.nav_link-active:after {
 	content: '';
 	margin-top: 2.9rem; // margin and height should
 	height: 0.4rem; // add up to active link margin
-	background: $adam-red;
+	background: #1b1e3d;
 	margin-left: -$nav-spacer-margin;
 	display: block;
 }
@@ -200,7 +206,25 @@ a.nav_link-active::after {
 	content: '';
 	margin-top: 2.9rem; // margin and height should
 	height: 0.4rem; // add up to active link margin
-	background: $adam-red;
+	background: #1b1e3d;
+	margin-right: -$nav-spacer-margin;
+	display: block;
+}
+
+a.nav_link-active.isScrolling:after {
+	content: '';
+	margin-top: 2.9rem; // margin and height should
+	height: 0.4rem; // add up to active link margin
+	background: #fff;
+	margin-left: -$nav-spacer-margin;
+	display: block;
+}
+
+a.nav_link-active.isScrolling::after {
+	content: '';
+	margin-top: 2.9rem; // margin and height should
+	height: 0.4rem; // add up to active link margin
+	background: #fff;
 	margin-right: -$nav-spacer-margin;
 	display: block;
 }

@@ -8,8 +8,9 @@ import client from './components/apolloClient'
 import Landing from './components/landing/Landing'
 import Register from './components/auth/register/Register'
 import SignIn from './components/auth/signin/Signin'
-import Board from './components/board/Board'
-import Slideshow from './components/slideshow/Slideshow'
+import AdminApp from './components/AdminApp'
+import NotFoundPage from './components/404'
+import './Root.css'
 
 const store = configureStore()
 
@@ -25,8 +26,8 @@ const Root = () => (
           <Route exact path="/" component={withRouter(Landing)} />
           <Route exact path="/register" component={withRouter(Register)} />
           <Route exact path="/signin" component={withRouter(SignIn)} />
-          <Route exact path="/board" component={withRouter(Board)} />
-          <Route exact path="/slideshow" component={withRouter(Slideshow)} />
+          <Route path="/admin" component={withRouter(AdminApp)} />
+          <Route path="*" component={NotFoundPage} />
         </Switch>
       </ConnectedRouter>
     </ApolloProvider>

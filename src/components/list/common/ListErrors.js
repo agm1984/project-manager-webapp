@@ -13,8 +13,8 @@ const ListErrors = (props) => {
     return null
   }
   return (
-    <div className="auth_error-container" style={{ marginTop: '3.2rem' }}>
-      <div className="auth_error-header">
+    <div id="list_error" style={{ marginTop: '3.2rem' }}>
+      <div id="list_error-header">
         THE FOLLOWING ERRORS OCCURRED:
       </div>
       <ul>

@@ -1,15 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import './Create.css'
 
 const CreateSubNav = (props) => {
   const { type, hasRequiredFields } = props
   if (hasRequiredFields) {
     return (
-      <div className="edit_subnav">
-        <div className="edit_subnav-title">
+      <div id="create_subnav">
+        <div id="create_subnav-title">
           ADD A NEW {type.toUpperCase()}
         </div>
-        <div className="edit_subnav-right-side">
+        <div id="create_subnav-right-side">
           <span>*</span>
           Denotes a Required Field
         </div>
@@ -17,11 +18,11 @@ const CreateSubNav = (props) => {
     )
   }
   return (
-    <div className="edit_subnav">
-      <div className="edit_subnav-title">
+    <div id="create_subnav">
+      <div id="create_subnav-title">
         ADD A NEW {type.toUpperCase()}
       </div>
-      <div className="edit_subnav-right-side" />
+      <div id="create_subnav-right-side" />
     </div>
   )
 }

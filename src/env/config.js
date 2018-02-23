@@ -7,7 +7,7 @@
 const getConfig = (NODE_ENV) => {
   const env = {
     development: {
-      API_URI: 'http://localhost:8080/graphql',
+      API_URI: 'http://localhost:8600/graphql',
       CORS_OPTIONS: {
         credentials: 'same-origin',
         mode: 'cors',
@@ -15,7 +15,7 @@ const getConfig = (NODE_ENV) => {
       VERBOSE_REDUX_LOGGING: false,
     },
     test: {
-      API_URI: 'http://localhost:7777/graphql',
+      API_URI: 'http://localhost:8700/graphql',
       CORS_OPTIONS: {
         credentials: 'same-origin',
         mode: 'cors',
@@ -23,7 +23,7 @@ const getConfig = (NODE_ENV) => {
       VERBOSE_REDUX_LOGGING: false,
     },
     production: {
-      API_URI: 'http://localhost:8080/graphql',
+      API_URI: 'http://localhost:8800/graphql',
       CORS_OPTIONS: {
         credentials: 'same-origin',
         mode: 'cors',

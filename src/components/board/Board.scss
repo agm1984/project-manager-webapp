@@ -5,7 +5,9 @@
 #board_wrapper {
   @include flex(column);
   align-items: center;
-  min-height: 100vh;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
   padding-top: 20rem;
 }
 
@@ -23,9 +25,10 @@
   font-size: $font-heading;
   line-height: $font-heading;
   font-weight: $fw-heading;
-  color: #1b1e3d;
-  padding-bottom: 8px;
+  color: #fff;
+  padding: 16px;
   letter-spacing: 0.2em;
+  background-color: #1b1e3d;
 }
 
 // /* $ease-out: all .3s cubic-bezier(0.23, 1, 0.32, 1);

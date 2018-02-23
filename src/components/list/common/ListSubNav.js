@@ -1,19 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { NavLink } from 'react-router-dom'
+import './List.css'
 
 const ListSubNav = (props) => {
   const {
     createURL, type, onClickToggle, isFilteringInactive,
   } = props
   return (
-    <div className="list_subnav">
-      <NavLink to={createURL} className="list_subnav_link">
+    <div id="list_subnav">
+      <NavLink to={createURL} className="list_subnav-link">
           Add a New {type}
       </NavLink>
-      <div className="list_subnav_menu-spacer">|</div>
+      <div style={{ width: '3.2rem' }} />
       <button
-        className="list_subnav_link"
+        className="list_subnav-link"
         onClick={onClickToggle}
       >
         {(!isFilteringInactive) ? 'Show Inactive' : 'Show All'}

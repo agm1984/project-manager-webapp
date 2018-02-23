@@ -5,16 +5,35 @@ import { NavLink } from 'react-router-dom'
 import UserDetails from './UserDetails'
 import handleGetPersonAvatar from './nav_actions'
 import { handleSignOut } from '../auth/signin/auth_actions'
-import jacky from './images/Jacky.jpg'
 import signout from './images/signout.png'
 import './Nav.css'
 
+/**
+ * This utility function allows function calls to be debounced.
+ * @param {Function} func Function that requires debouncing
+ * @param {Number} wait Wait time in milliseconds between successive invocations
+ */
+const debounce = (func, wait) => {
+  let timeout
+  return (...args) => {
+    clearTimeout(timeout)
+    timeout = setTimeout(() => func.apply(this, args), wait)
+  }
+}
+
 class NavContainer extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      scrollPositionY: 0,
+    }
+  }
   /**
    * When the Nav Container loads, the currently signed in user's profile
    * picture should be acquired from the server.
    */
   componentDidMount() {
+    window.addEventListener('scroll', debounce(this.handleScroll, 16))
     return this.props.handleGetPersonAvatar()
   }
 
@@ -23,7 +42,8 @@ class NavContainer extends Component {
    * signed in, the profile picture is acquired every page reload.
    * This is moderately wasteful and could be cleaned up further.
    */
-  componentWillUpdate() {
+  componentWillUnmount() {
+    window.removeEventListener('scroll', debounce(this.handleScroll, 16))
     return this.props.handleGetPersonAvatar()
   }
 
@@ -32,34 +52,43 @@ class NavContainer extends Component {
    * he/she should be signed out.
    * @param {Synthetic Event} e React-controlled Synthetic Event
    */
-  handleSignOutClick(e) {
+  handleSignOutClick = (e) => {
     e.preventDefault()
     return this.props.handleSignOut()
+  }
+
+  /**
+   * When the user scrolls down, the Nav Bar should transition from its
+   * Top State to Scrolling State. If the view is scrolled more than zero,
+   * Scrolling State and additional CSS styling will be enabled.
+   */
+  handleScroll = () => {
+    const scrollPositionY = +window.scrollY
+    this.setState({ scrollPositionY })
   }
 
   render() {
     const Spacer = () => (
       <div className="nav_menu-spacer">|</div>
     )
+    const isScrolling = !!this.state.scrollPositionY
     return (
-      <div id="nav">
+      <div className={(isScrolling) ? 'nav isScrolling' : 'nav'}>
         <nav id="nav_elements">
           <div id="nav_left-container">
             <NavLink
-              to="/profile"
+              to="/admin/profile"
               style={{ textDecoration: 'none' }}
             >
-              <UserDetails
-                avatar={jacky}
-              />
+              <UserDetails isScrolling={isScrolling} />
             </NavLink>
           </div>
           <div id="nav_menu">
             <div className="nav_menu-item">
               <NavLink
-                to="/admin/dashboard"
+                to="/admin/board"
                 className="nav_link"
-                activeClassName="nav_link-active"
+                activeClassName={(isScrolling) ? 'nav_link-active isScrolling' : 'nav_link-active'}
               >
                 BOARD
               </NavLink>
@@ -67,9 +96,9 @@ class NavContainer extends Component {
             <Spacer />
             <div className="nav_menu-item">
               <NavLink
-                to="/admin/people"
+                to="/admin/clients"
                 className="nav_link"
-                activeClassName="nav_link nav_link-active"
+                activeClassName={(isScrolling) ? 'nav_link-active isScrolling' : 'nav_link-active'}
               >
                 CLIENTS
               </NavLink>
@@ -77,9 +106,19 @@ class NavContainer extends Component {
             <Spacer />
             <div className="nav_menu-item">
               <NavLink
+                to="/admin/leads"
+                className="nav_link"
+                activeClassName="nav_link-active"
+              >
+                LEADS
+              </NavLink>
+            </div>
+            <Spacer />
+            <div className="nav_menu-item">
+              <NavLink
                 to="/admin/articles"
                 className="nav_link"
-                activeClassName="nav_link nav_link-active"
+                activeClassName="nav_link-active"
               >
                 ARTICLES
               </NavLink>
@@ -87,7 +126,7 @@ class NavContainer extends Component {
           </div>
           <div id="nav_user">
             <NavLink
-              to="/admin/signin"
+              to="/signin"
               className="nav_user-signout"
               onClick={e => this.handleSignOutClick(e)}
             >

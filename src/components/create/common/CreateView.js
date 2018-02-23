@@ -1,11 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import './Create.css'
 
 const CreateView = (props) => {
   const { children } = props
   return (
-    <div className="page_container">
-      <div className="edit_wrapper">
+    <div id="create-wrapper">
+      <div id="create-container">
         {children}
       </div>
     </div>

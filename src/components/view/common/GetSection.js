@@ -1,14 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import './View.css'
 
 const GetSection = (props) => {
   const { isTop, heading, children } = props
   const sectionPlacement = isTop
-    ? 'view_container row-margin-lg'
-    : 'view_container row-margin-sm'
+    ? 'view_section view_section-margin-lg'
+    : 'view_section view_section-margin-sm'
   return (
     <div className={sectionPlacement}>
-      <div className="view_heading">
+      <div className="view_section_heading">
         {heading}
       </div>
       {children}

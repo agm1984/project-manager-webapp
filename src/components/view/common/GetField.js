@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import './View.css'
 
 const GetField = (props) => {
   const { name, value } = props

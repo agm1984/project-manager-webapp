@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import ReactQuill from 'react-quill'
+import './Create.css'
+import './CreateQuill.css'
 
 class CreateQuill extends Component {
   constructor(props) {
@@ -70,9 +72,9 @@ class CreateQuill extends Component {
       input, name, placeholder, meta,
     } = this.props
     const { touched, error } = meta
-    const maybeHasError = (touched && error) ? 'error' : ''
+    const maybeHasError = (touched && error) ? 'create_input-error' : ''
     return (
-      <div className="edit_rowcontainer">
+      <div className="create_row-container">
         <ReactQuill
           ref={(el) => {
             this.reactQuillRef = el
@@ -87,7 +89,7 @@ class CreateQuill extends Component {
           placeholder={placeholder}
           onChange={draft => this.handleChange(draft)}
         />
-        {touched && (error && <span className="edit_required">{error}</span>)}
+        {touched && (error && <span className="create_required">{error}</span>)}
       </div>
     )
   }

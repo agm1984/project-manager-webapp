@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import './Create.css'
 
 const CreateCheckbox = (props) => {
   const {
@@ -7,19 +8,19 @@ const CreateCheckbox = (props) => {
   } = props
   const { touched, error } = meta
   const maybeHasValue = (input.value)
-    ? 'edit_filled'
-    : 'edit_empty'
+    ? 'create_filled'
+    : 'create_empty'
   const maybeHasError = (touched && error)
-    ? 'edit_checkbox error'
-    : `edit_checkbox normal ${maybeHasValue}`
+    ? 'create_checkbox create_input-error'
+    : `create_checkbox create_input-normal ${maybeHasValue}`
   return (
-    <div className="edit_rowcontainer">
-      <label className="edit_row" htmlFor={name}>
-        <div className="edit_row-label">
+    <div className="create_row-container">
+      <label className="create_row" htmlFor={name}>
+        <div className="create_row-label">
           {label}
-          {required && <span className="edit_asterisk">*</span>}
+          {required && <span className="create_asterisk">*</span>}
         </div>
-        <div className="edit_row-item" style={{ paddingLeft: '0.8rem' }}>
+        <div className="create_row-item" style={{ paddingLeft: '0.8rem' }}>
           <input
             id={name}
             className={maybeHasError}
@@ -30,7 +31,7 @@ const CreateCheckbox = (props) => {
           />
         </div>
       </label>
-      {touched && (error && <span className="edit_required">{error}</span>)}
+      {touched && (error && <span className="create_required">{error}</span>)}
     </div>
   )
 }

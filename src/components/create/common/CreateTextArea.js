@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import './Create.css'
 
 const CreateTextArea = (props) => {
   const {
@@ -7,19 +8,19 @@ const CreateTextArea = (props) => {
   } = props
   const { touched, error } = meta
   const maybeHasValue = (input.value)
-    ? 'edit_filled'
-    : 'edit_empty'
+    ? 'create_filled'
+    : 'create_empty'
   const maybeHasError = (touched && error)
-    ? 'form-text-input edit_multi error'
-    : `form-text-input edit_multi normal ${maybeHasValue}`
+    ? 'create_textarea create_select-error'
+    : `create_textarea create_select-normal ${maybeHasValue}`
   return (
-    <div className="edit_rowcontainer">
-      <label className="edit_row" htmlFor={name}>
-        <div className="edit_row-label">
+    <div className="create_row-container">
+      <label className="create_row" htmlFor={name}>
+        <div className="create_row-label">
           {label}
-          {required && <span className="edit_asterisk">*</span>}
+          {required && <span className="create_asterisk">*</span>}
         </div>
-        <div className="edit_row-item">
+        <div className="create_row-item">
           <textarea
             id={name}
             className={maybeHasError}
@@ -29,7 +30,7 @@ const CreateTextArea = (props) => {
           />
         </div>
       </label>
-      {touched && (error && <span className="edit_required">{error}</span>)}
+      {touched && (error && <span className="create_required">{error}</span>)}
     </div>
   )
 }
