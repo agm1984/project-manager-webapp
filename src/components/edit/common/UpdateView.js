@@ -1,11 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import './Edit.css'
 
 const UpdateView = (props) => {
   const { children } = props
   return (
-    <div className="page_container">
-      <div className="edit_wrapper">
+    <div id="edit-wrapper">
+      <div id="edit-container">
         {children}
       </div>
     </div>

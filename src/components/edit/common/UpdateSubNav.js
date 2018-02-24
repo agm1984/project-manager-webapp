@@ -1,24 +1,29 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import './Edit.css'
 
 const UpdateSubNav = (props) => {
   const {
     type, hasRequiredFields, recordLabel, recordStatus,
   } = props
+  let labelToDisplay = recordLabel
+  if (recordLabel.length > 50) {
+    labelToDisplay = `${recordLabel.substr(0, 50)}...`
+  }
   if (hasRequiredFields) {
     return (
-      <div className="edit_subnav">
-        <div className="edit_subnav-title">
+      <div id="edit_subnav">
+        <div id="edit_subnav_record">
           EDIT {type.toUpperCase()}
-          <span className="subnav_title-bold">
-            {recordLabel}
+          <span id="edit_subnav_record-label">
+            {labelToDisplay}
           </span>
           -
-          <span className="subnav_active">
+          <span id="edit_subnav_record-status">
             {recordStatus}
           </span>
         </div>
-        <div className="edit_subnav-right-side">
+        <div id="edit_subnav-right-side">
           <span>*</span>
           Denotes a Required Field
         </div>
@@ -26,13 +31,16 @@ const UpdateSubNav = (props) => {
     )
   }
   return (
-    <div className="edit_subnav">
-      <div className="edit_subnav-title">
+    <div id="edit_subnav">
+      <div id="edit_subnav_record">
         EDIT {type.toUpperCase()}
-      </div>
-      <div className="edit_subnav-right-side">
-        <span>*</span>
-        Denotes a Required Field
+        <span id="edit_subnav_record-label">
+          {labelToDisplay}
+        </span>
+        -
+        <span id="edit_subnav_record-status">
+          {recordStatus}
+        </span>
       </div>
     </div>
   )

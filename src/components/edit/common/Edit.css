@@ -13,7 +13,7 @@
 .row-margin-xl {
   margin-top: 5.5rem; }
 
-#create-wrapper {
+#edit-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,11 +21,11 @@
   padding-left: 2.4rem;
   flex: 1; }
 
-#create-container {
+#edit-container {
   width: 100%;
   max-width: 102.4rem; }
 
-#create_subnav {
+#edit_subnav {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -44,23 +44,36 @@
   font-weight: 400;
   color: #b3b3b3; }
 
-#create_subnav-title {
+#edit_subnav_record {
   font-size: 1.4rem;
   line-height: 1.4rem;
   text-align: left; }
 
-#create_subnav-right-side {
+#edit_subnav_record-label {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  box-sizing: border-box;
+  font-weight: 600;
+  color: #fff; }
+
+#edit_subnav_record-status {
+  padding-left: 0.8rem;
+  box-sizing: border-box;
+  color: #3d9720;
+  font-weight: 600; }
+
+#edit_subnav-right-side {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
   flex: 1; }
 
-#create_subnav-right-side span {
+#edit_subnav-right-side span {
   padding-right: 0.4rem;
   color: #dd0426; }
 
-.create_section {
+.edit_section {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -70,13 +83,13 @@
   margin-bottom: 48px;
   flex: 0; }
 
-.create_section-margin-sm {
+.edit_section-margin-sm {
   margin-top: 1.3rem; }
 
-.create_section-margin-lg {
+.edit_section-margin-lg {
   margin-top: 3.4rem; }
 
-.create_section_heading {
+.edit_section_heading {
   display: flex;
   width: 100%;
   padding: 16px;
@@ -88,14 +101,14 @@
   color: #fff;
   background-color: #1b1e3d; }
 
-.create_row-container {
+.edit_row-container {
   display: flex;
   flex-direction: column;
   width: 100%;
   padding-left: 16px;
   padding-right: 16px; }
 
-.create_row {
+.edit_row {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -104,7 +117,7 @@
   min-height: 4.8rem;
   margin-top: 0.8rem; }
 
-.create_row-label {
+.edit_row-label {
   width: 33rem;
   padding-right: 1.6rem;
   box-sizing: border-box;
@@ -114,10 +127,10 @@
   letter-spacing: 0.2em;
   color: #b3b3b3; }
 
-.create_row-item {
+.edit_row-item {
   flex: 1; }
 
-.create_input {
+.edit_input {
   display: block;
   width: 100%;
   height: 4.8rem;
@@ -128,17 +141,17 @@
   line-height: 1.4rem;
   font-weight: 400; }
 
-.create_input::placeholder {
+.edit_input::placeholder {
   color: #b3b3b3; }
 
-.create_input-normal {
+.edit_input-normal {
   box-sizing: border-box;
   background: transparent;
   border: 0.1rem solid rgba(255, 255, 255, 0.2);
   border-radius: 0;
   outline: 0; }
 
-.create_input-error {
+.edit_input-error {
   box-sizing: border-box;
   background: transparent;
   border-top: 0.1rem solid #dd0426;
@@ -149,13 +162,13 @@
   color: #dd0426;
   background-color: #f8dee0; }
 
-.create_input-error::placeholder {
+.edit_input-error::placeholder {
   color: #dd0426; }
 
-.create_checkbox {
+.edit_checkbox {
   position: relative; }
 
-.create_checkbox:after {
+.edit_checkbox:after {
   content: '';
   position: absolute;
   width: 1.6rem;
@@ -164,7 +177,7 @@
   background-color: #fafafa;
   border: 0.1rem solid #e5e5e5; }
 
-.create_checkbox:checked:after {
+.edit_checkbox:checked:after {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -178,7 +191,7 @@
   background-color: #fafafa;
   border: 0.1rem solid #e5e5e5; }
 
-.create_select {
+.edit_select {
   width: 100%;
   height: 4.8rem;
   padding-left: 1.6rem;
@@ -187,14 +200,14 @@
   line-height: 1.4rem;
   font-weight: 400; }
 
-.create_select-normal {
+.edit_select-normal {
   box-sizing: border-box;
   background: transparent;
   border: 0.1rem solid rgba(255, 255, 255, 0.2);
   border-radius: 0;
   outline: 0; }
 
-.create_select-error {
+.edit_select-error {
   box-sizing: border-box;
   background: transparent;
   border-top: 0.1rem solid #dd0426;
@@ -205,10 +218,10 @@
   color: #dd0426;
   background-color: #f8dee0; }
 
-.create_select-error::placeholder {
+.edit_select-error::placeholder {
   color: #dd0426; }
 
-.create_textarea {
+.edit_textarea {
   display: block;
   width: 100%;
   height: 4.8rem;
@@ -222,7 +235,7 @@
   box-sizing: border-box;
   height: 16rem; }
 
-.create_textarea::placeholder {
+.edit_textarea::placeholder {
   color: #b3b3b3; }
 
 .edit_multi {
@@ -264,23 +277,23 @@
   overflow: hidden;
   border-width: 0; }
 
-.create_empty {
+.edit_empty {
   color: #b3b3b3; }
 
-.create_filled {
+.edit_filled {
   color: #fff; }
 
-.create_selectList {
+.edit_selectList {
   color: #1A1A1A; }
 
-.create_asterisk {
+.edit_asterisk {
   padding-left: 0.4rem;
   font-size: 1.4rem;
   line-height: 1.4rem;
   font-weight: 700;
   color: #dd0426; }
 
-.create_required {
+.edit_required {
   margin-left: 33rem;
   padding-top: 0.8rem;
   padding-left: 0.8rem;
@@ -290,7 +303,7 @@
   line-height: 1.4rem;
   color: #dd0426; }
 
-#create_error {
+#edit_error {
   width: 100%;
   padding: 1.6rem;
   border-top: 0.1rem solid #dd0426;
@@ -304,21 +317,21 @@
   color: #dd0426;
   background-color: #f8dee0; }
 
-#create_error-header {
+#edit_error-header {
   font-weight: 700; }
 
-#create_buttons-container {
+#edit_buttons-container {
   display: flex;
   width: 100%;
   margin-top: 3.2rem; }
 
-#create_buttons {
+#edit_buttons {
   display: flex;
   justify-content: center;
   flex: 1;
   margin-bottom: 64px; }
 
-#create_button-cancel {
+#edit_button-cancel {
   width: 30rem;
   font-size: 1.4rem;
   line-height: 1.4rem;
@@ -335,12 +348,12 @@
   white-space: nowrap;
   margin-right: 32px; }
 
-#create_button-cancel:hover {
+#edit_button-cancel:hover {
   color: #000;
   background-color: #e5e5e5;
   transition: background-color 100ms ease-in-out; }
 
-#create_button-submit {
+#edit_button-submit {
   width: 30rem;
   font-size: 1.4rem;
   line-height: 1.4rem;
@@ -357,7 +370,7 @@
   white-space: nowrap;
   margin-left: 32px; }
 
-#create_button-submit:hover {
+#edit_button-submit:hover {
   color: #000;
   background-color: #e5e5e5;
   transition: background-color 200ms ease-in-out; }

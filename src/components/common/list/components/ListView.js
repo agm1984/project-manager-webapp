@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import './List.css'
-import './ReactTable.css'
 
 const ListView = (props) => {
   const { children } = props

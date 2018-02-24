@@ -125,18 +125,18 @@ const PersonEditForm = (props) => {
           placeholder="This is about text..."
         />
       </UpdateSection>
-      <div className="edit_button-container">
-        <div className="edit_buttons">
+      <div id="edit_buttons-container">
+        <div id="edit_buttons">
           <button
             disabled={submitting}
-            className="edit_button-grey"
+            id="edit_button-cancel"
             onClick={handleBackPress}
           >
             CANCEL
           </button>
           <button
             disabled={pristine || submitting}
-            className="edit_button-red"
+            id="edit_button-submit"
             type="submit"
           >
             UPDATE

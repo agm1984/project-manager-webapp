@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import './Edit.css'
 
 const UpdateCheckbox = (props) => {
   const {
@@ -10,10 +11,10 @@ const UpdateCheckbox = (props) => {
     ? 'edit_filled'
     : 'edit_empty'
   const maybeHasError = (touched && error)
-    ? 'edit_checkbox error'
-    : `edit_checkbox normal ${maybeHasValue}`
+    ? 'edit_checkbox edit_input-error'
+    : `edit_checkbox edit_input-normal ${maybeHasValue}`
   return (
-    <div className="edit_rowcontainer">
+    <div className="edit_row-container">
       <label className="edit_row" htmlFor={name}>
         <div className="edit_row-label">
           {label}

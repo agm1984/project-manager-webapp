@@ -1,5 +1,4 @@
 export { default as UpdateCheckbox } from './UpdateCheckbox'
-export { default as UpdateGeoSelect } from './UpdateGeoSelect'
 export { default as UpdateGeoSuggest } from './UpdateGeoSuggest'
 export { default as UpdateInput } from './UpdateInput'
 export { default as UpdateInputTags } from './UpdateInputTags'

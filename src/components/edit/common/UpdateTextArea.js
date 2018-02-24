@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import './Edit.css'
 
 const UpdateTextArea = (props) => {
   const {
@@ -10,10 +11,10 @@ const UpdateTextArea = (props) => {
     ? 'edit_filled'
     : 'edit_empty'
   const maybeHasError = (touched && error)
-    ? 'form-text-input edit_multi error'
-    : `form-text-input edit_multi normal ${maybeHasValue}`
+    ? 'edit_textarea edit_select-error'
+    : `edit_textarea edit_select-normal ${maybeHasValue}`
   return (
-    <div className="edit_rowcontainer">
+    <div className="edit_row-container">
       <label className="edit_row" htmlFor={name}>
         <div className="edit_row-label">
           {label}

@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import ReactQuill from 'react-quill'
+import './Edit.css'
+import '../../create/common/CreateQuill.css'
 
 class UpdateQuill extends Component {
   constructor(props) {
@@ -76,7 +78,7 @@ class UpdateQuill extends Component {
     const { touched, error } = meta
     const maybeHasError = (touched && error) ? 'error' : ''
     return (
-      <div className="edit_rowcontainer">
+      <div className="edit_row-container">
         <ReactQuill
           ref={(el) => {
             this.reactQuillRef = el

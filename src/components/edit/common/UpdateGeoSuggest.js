@@ -14,10 +14,10 @@ class CreateGeoSuggest extends Component {
       ? 'edit_filled'
       : 'edit_empty'
     const maybeHasError = (touched && error)
-      ? 'form-text-input error'
-      : `form-text-input normal ${maybeHasValue}`
+      ? 'create_input create_input-error'
+      : `create_input create_input-normal ${maybeHasValue}`
     return (
-      <div className="edit_rowcontainer">
+      <div className="edit_row-container">
         <label className="edit_row" htmlFor={name}>
           <div className="edit_row-label">
             {label}

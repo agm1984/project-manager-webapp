@@ -15,7 +15,6 @@ export const initApp = () => async (dispatch) => {
     if (!user) {
       return dispatch({ type: SIGN_OUT })
     }
-    client.resetStore()
     return dispatch({ type: AUTH_SUCCESS })
   } catch (e) {
     return dispatch({ type: SIGN_OUT })

@@ -2,10 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import ReactTable from 'react-table'
 import { NavLink } from 'react-router-dom'
-import { ListPagination, ListActionsMenu } from '../common'
-import { formatTime } from '../utils'
+import { ListPagination, ListActionsMenu } from '../components/'
+import { formatTel, formatTime } from '../utils'
+import noPhoto from '../../common/images/noPhoto.png'
+import './ReactTable.css'
 
-const ArticleTable = (props) => {
+const PersonTable = (props) => {
   const {
     pageSize, searchMatches, onChangePage, activePage,
     isEmpty, data, bottomData, noDataText,
@@ -29,58 +31,74 @@ const ArticleTable = (props) => {
         noDataText={noDataText}
         columns={[
           {
-            Header: 'TITLE',
-            id: 'article_title',
-            accessor: 'article_title',
+            Header: '',
+            id: 'person_avatar',
+            accessor: 'person_avatar',
+            sortable: false,
+            filterable: false,
+            Cell: (cellProps) => {
+              const { value } = cellProps
+              return (
+                <img
+                  className="table_row_thumbnail"
+                  alt="Avatar Thumbnail"
+                  src={(!value) ? noPhoto : value}
+                />
+              )
+            },
+            minWidth: 50,
+            maxWidth: 100,
+          },
+          {
+            Header: 'NAME',
+            id: 'person_fullName',
+            accessor: 'person_fullName',
             Cell: (cellProps) => {
               const { _original } = cellProps.row
               return (
                 <NavLink
                   className="table_link-clickable"
-                  to={`/admin/articles/view/${_original.article_slug}`}
+                  to={`/admin/people/view/${_original.person_serialNumber}`}
                 >
-                  {_original.article_title.substring(0, 40)}
+                  {`${_original.person_givenName} ${_original.person_familyName}`}
                 </NavLink>
               )
             },
-            minWidth: 200,
           },
           {
-            Header: 'TAGS',
-            id: 'article_tags',
-            accessor: 'article_tags',
+            Header: 'PHONE',
+            id: 'person_tel',
+            accessor: 'person_tel',
             Cell: (cellProps) => {
-              const { _original } = cellProps.row
-              if (_original.article_tags === undefined) {
-                return null
+              const { value } = cellProps
+              if (!value) {
+                return 'None'
               }
-              return (
-                <div>
-                  {_original.article_tags.map(tag => tag.tag_name).sort().join(', ')}
-                </div>
-              )
+              return formatTel(value)
             },
           },
           {
-            Header: 'AUTHOR',
-            id: 'article_author',
-            accessor: 'article_author',
+            Header: 'EMAIL',
+            id: 'person_email',
+            accessor: 'person_email',
             Cell: (cellProps) => {
-              const { _original } = cellProps.row
+              const { value } = cellProps
               return (
-                <NavLink
-                  className="table_link-clickable"
-                  to={`/admin/people/view/${_original.article_author.person_serialNumber}`}
-                >
-                  {`${_original.article_author.person_givenName} ${_original.article_author.person_familyName}`}
-                </NavLink>
+                <a className="table_link-clickable" href={`mailto:${value}`}>
+                  {value}
+                </a>
               )
             },
           },
           {
-            Header: 'CREATED',
-            id: 'article_created',
-            accessor: 'article_created',
+            Header: 'TYPE',
+            id: 'person_memberType',
+            accessor: 'person_memberType',
+          },
+          {
+            Header: 'JOINED',
+            id: 'person_created',
+            accessor: 'person_created',
             Cell: (cellProps) => {
               const { value } = cellProps
               return formatTime(+value)
@@ -90,23 +108,23 @@ const ArticleTable = (props) => {
           },
           {
             Header: 'STATUS',
-            id: 'article_status',
-            accessor: 'article_status',
+            id: 'person_status',
+            accessor: 'person_status',
             minWidth: 125,
             maxWidth: 125,
           },
           {
             Header: 'ACTIONS',
-            id: 'article_actions',
-            accessor: 'article_actions',
+            id: 'person_actions',
+            accessor: 'person_actions',
             sortable: false,
             filterable: false,
             Cell: (cellProps) => {
               const { _original } = cellProps.row
               return (
                 <ListActionsMenu
-                  thingRoute="articles"
-                  serialNumber={_original.article_slug}
+                  thingRoute="people"
+                  serialNumber={_original.person_serialNumber}
                 />
               )
             },
@@ -114,7 +132,7 @@ const ArticleTable = (props) => {
             maxWidth: 125,
           },
         ]}
-        defaultSorted={[{ id: 'article_created', desc: true }]}
+        defaultSorted={[{ id: 'person_created', desc: true }]}
       />
       <ListPagination
         pageSize={pageSize}
@@ -129,10 +147,10 @@ const ArticleTable = (props) => {
   )
 }
 
-ArticleTable.defaultProps = {
+PersonTable.defaultProps = {
   bottomData: undefined,
 }
-ArticleTable.propTypes = {
+PersonTable.propTypes = {
   pageSize: PropTypes.number.isRequired,
   searchMatches: PropTypes.arrayOf(PropTypes.object).isRequired,
   onChangePage: PropTypes.func.isRequired,
@@ -143,5 +161,4 @@ ArticleTable.propTypes = {
   noDataText: PropTypes.string.isRequired,
 }
 
-
-export default ArticleTable
+export default PersonTable

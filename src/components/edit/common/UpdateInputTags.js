@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import TagsInput from 'react-tagsinput'
+import './Edit.css'
+import '../../create/common/CreateTags.css'
 
 class UpdateInputTags extends Component {
   constructor(props) {
@@ -33,7 +35,7 @@ class UpdateInputTags extends Component {
     } = this.props
     const { touched, error } = meta
     return (
-      <div className="edit_rowcontainer">
+      <div className="edit_row-container">
         <label className="edit_row" htmlFor={name}>
           <div className="edit_row-label">
             {label}
@@ -45,6 +47,15 @@ class UpdateInputTags extends Component {
               value={this.state.tags}
               onChange={this.handleUpdateTags}
               addKeys={[9, 13]}
+              className="create_tags"
+              inputProps={{
+                className: 'create_tags-placeholder',
+                placeholder: 'Add a tag',
+              }}
+              tagProps={{
+                className: 'create_tags-tag',
+                classNameRemove: 'create_tags-remove',
+              }}
               onlyUnique
             />
           </div>

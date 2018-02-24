@@ -60,15 +60,15 @@ const editPersonValidatorSchema = (props) => {
   }
 
   // TEL
+  if (person_tel && !validator.isMobilePhone(person_tel, 'en-CA')) {
+    errors.person_tel = 'Phone is invalid.'
+  }
   if (person_tel && !validator.isLength(person_tel, { min: 10, max: 10 })) {
     errors.person_tel = 'Phone must be 10 digits.'
   }
   const isNormalInteger = num => /^\+?(0|[1-9]\d*)$/.test(num) // rejects any number other than 0-9999999999
   if (person_tel && !isNormalInteger(person_tel)) {
     errors.person_tel = 'Phone must consist of only digits.'
-  }
-  if (person_tel && !validator.isMobilePhone(person_tel, 'en-CA')) {
-    errors.person_tel = 'Phone is invalid.'
   }
 
   // GENDER

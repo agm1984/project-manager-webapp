@@ -78,6 +78,7 @@ class PersonEditContainer extends Component {
 
   render() {
     if (!Object.keys(this.state.record).length) {
+      console.log('HERE WE ARE')
       return <UpdateView />
     }
     const { record, serverErrors } = this.state

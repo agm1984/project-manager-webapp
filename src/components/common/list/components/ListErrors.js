@@ -1,8 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import './Edit.css'
 
-const UpdateErrors = (props) => {
+const ListErrors = (props) => {
   const { errors } = props
   if (!errors) {
     return null
@@ -14,8 +13,8 @@ const UpdateErrors = (props) => {
     return null
   }
   return (
-    <div className="edit_error" style={{ marginTop: '3.2rem', width: '100rem' }}>
-      <div className="edit_error-header">
+    <div id="list_error" style={{ marginTop: '3.2rem' }}>
+      <div id="list_error-header">
         THE FOLLOWING ERRORS OCCURRED:
       </div>
       <ul>
@@ -25,11 +24,11 @@ const UpdateErrors = (props) => {
   )
 }
 
-UpdateErrors.defaultProps = {
+ListErrors.defaultProps = {
   errors: undefined,
 }
-UpdateErrors.propTypes = {
+ListErrors.propTypes = {
   errors: PropTypes.arrayOf(PropTypes.string),
 }
 
-export default UpdateErrors
+export default ListErrors

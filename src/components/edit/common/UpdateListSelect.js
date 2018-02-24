@@ -10,10 +10,10 @@ const UpdateListSelect = (props) => {
     ? 'edit_filled'
     : 'edit_empty'
   const maybeHasError = (touched && error)
-    ? 'edit_select error'
-    : `edit_select normal ${maybeHasValue}`
+    ? 'edit_select edit_select-error'
+    : `edit_select edit_select-normal ${maybeHasValue}`
   return (
-    <div className="edit_rowcontainer">
+    <div className="edit_row-container">
       <label className="edit_row" htmlFor={name}>
         <div className="edit_row-label">
           {label}
@@ -36,7 +36,7 @@ const UpdateListSelect = (props) => {
               <option
                 key={opt}
                 value={opt}
-                className="edit_filled"
+                className="edit_selectList"
               >
                 {opt}
               </option>

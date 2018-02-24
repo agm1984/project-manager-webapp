@@ -173,10 +173,9 @@ a.view_link:active {
 #view_back {
   display: flex;
   justify-content: center;
-  margin-top: 3.2rem;
   font-size: 1.4rem;
   line-height: 1.4rem;
-  padding-bottom: 48px; }
+  margin-bottom: 64px; }
 
 #view_back-link {
   outline: none;

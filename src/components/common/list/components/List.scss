@@ -1,6 +1,6 @@
-@import "../../../styles/variables/_colors.scss";
-@import "../../../styles/variables/_sizes.scss";
-@import "../../../styles/mixins/_mixins.scss";
+@import "../../../../styles/variables/_colors.scss";
+@import "../../../../styles/variables/_sizes.scss";
+@import "../../../../styles/mixins/_mixins.scss";
 
 // ## LIST VIEW                                      LAYOUT
 // ########################################################
@@ -88,7 +88,7 @@ a.list_subnav-link:active {
 button.list_subnav-link {
   outline: none;
   background: none;
-//  border: none;
+  //  border: none;
   // margin: 0;
   // padding: 0;
   display: flex;
@@ -375,8 +375,7 @@ a.list_result-link:active {
   font-size: $font-xl;
   line-height: $font-xl;
   color: #fff;
-  background-color: #1b1e3d;
-  //border: 1px solid $adam-app-border;
+  background-color: #1b1e3d; //border: 1px solid $adam-app-border;
   box-shadow: -8px 14px 40px 0px rgba(0, 0, 0, 0.5);
   padding: $xs $xs 0 $xs;
   z-index: 1;

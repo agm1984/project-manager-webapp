@@ -30,7 +30,7 @@
 
 .isScrolling {
   background-color: #1b1e3d;
-  transition: background-color 100ms ease-in-out; }
+  transition: background-color 500ms ease-in-out; }
 
 #nav:before {
   content: '';

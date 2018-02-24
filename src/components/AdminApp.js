@@ -20,6 +20,7 @@ import ArticleList from './list/article/index'
 import ArticleCreate from './create/article/index'
 import ArticleView from './view/article/index'
 import ArticleEdit from './edit/article/index'
+import Router from './common/Router'
 // import DevTools from './dashboards/devtools'
 import Board from './board/Board'
 import LevelUp from '../components/levelup/LevelUp'
@@ -39,7 +40,8 @@ const AdminApp = () => ([
       <Route exact path="/admin" component={Board} />
       <Route exact path="/admin/board" component={Board} />
       <Route exact path="/admin/profile" component={Profile} />
-      <Route exact path="/admin/people" component={PersonList} />
+      <Route path="/admin/:type/:action/:id" component={Router} />
+      {/* <Route exact path="/admin/people" component={PersonList} />
       <Route exact path="/admin/people/create" component={PersonCreate} />
       <Route exact path="/admin/people/view/:person_serialNumber" component={PersonView} />
       <Route exact path="/admin/people/edit/:person_serialNumber" component={PersonEdit} />
@@ -56,7 +58,7 @@ const AdminApp = () => ([
       <Route exact path="/admin/articles/view/:article_slug" component={ArticleView} />
       <Route exact path="/admin/articles/edit/:article_slug" component={ArticleEdit} />
       <Route exact path="/admin/levelup" component={LevelUp} />
-      <Route path="*" component={NotFoundPage} />
+      <Route path="*" component={NotFoundPage} /> */}
     </Switch>
   </Auth>,
 ])

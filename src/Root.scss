@@ -5,16 +5,16 @@
 @import "styles/variables/_sizes.scss";
 @import "styles/mixins/_mixins.scss";
 @import "styles/common/animate.scss";
-@import "styles/common/common.scss";
-@import "styles/common/errors.scss";
-@import "styles/common/forms.scss";
+// @import "styles/common/common.scss";
+// @import "styles/common/errors.scss";
+// @import "styles/common/forms.scss";
 @import "styles/dashboard/dashboard.scss";
 @import "styles/profile/profile.scss";
 // @import "styles/crud/list.scss";
 // @import "styles/crud/create.scss";
-@import "styles/crud/reacttags.scss";
-@import "styles/crud/view.scss";
-@import "styles/crud/edit.scss";
+// @import "styles/crud/reacttags.scss";
+// @import "styles/crud/view.scss";
+// @import "styles/crud/edit.scss";
 // ## APP                                       BASE LAYOUT
 // ########################################################
 html,
@@ -34,13 +34,12 @@ body {
 //   }
 // }
 #root {
-  // background-color: $adam-app-bg;
   background-repeat: no-repeat;
   background-image: url(./components/landing/images/heroBackground.jpg);
   background-size: cover;
   background-position: center center;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 button {

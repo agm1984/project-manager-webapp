@@ -4,7 +4,7 @@
 
 // ## CREATE                                         LAYOUT
 // ########################################################
-#create-wrapper {
+#edit-wrapper {
   @include flex(column);
   align-items: center;
   padding-right: $lg;
@@ -12,14 +12,14 @@
   flex: 1;
 }
 
-#create-container {
+#edit-container {
   width: 100%;
   max-width: 102.4rem;
 }
 
 // CREATE & EDIT FORM                               SUB-NAV
 // ########################################################
-#create_subnav {
+#edit_subnav {
   @include flex(row);
   @include flex-center;
   flex: 0;
@@ -37,26 +37,41 @@
   color: $adam-sub-heading;
 }
 
-#create_subnav-title {
+#edit_subnav_record {
   font-size: $font-xl;
   line-height: $font-xl;
   text-align: left;
 }
 
-#create_subnav-right-side {
+#edit_subnav_record-label {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  box-sizing: border-box;
+  font-weight: 600;
+  color: #fff;
+}
+
+#edit_subnav_record-status {
+  padding-left: 0.8rem;
+  box-sizing: border-box;
+  color: $adam-green;
+  font-weight: 600;
+}
+
+#edit_subnav-right-side {
   @include flex(row);
   @include flex-end;
   flex: 1;
 }
 
-#create_subnav-right-side span {
+#edit_subnav-right-side span {
   padding-right: $xxs;
   color: $adam-red;
 }
 
 // ## CREATE                                       SECTIONS
 // ########################################################
-.create_section {
+.edit_section {
   @include flex(column);
   align-items: center; // width: 102.4rem;
   width: 100%;
@@ -66,15 +81,15 @@
   flex: 0;
 }
 
-.create_section-margin-sm {
+.edit_section-margin-sm {
   margin-top: 1.3rem;
 }
 
-.create_section-margin-lg {
+.edit_section-margin-lg {
   margin-top: 3.4rem;
 }
 
-.create_section_heading {
+.edit_section_heading {
   display: flex;
   width: 100%;
   padding: 16px;
@@ -89,7 +104,7 @@
 
 // CREATE                                       SECTION ROW
 // ########################################################
-.create_row-container {
+.edit_row-container {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -97,7 +112,7 @@
   padding-right: 16px;
 }
 
-.create_row {
+.edit_row {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -107,7 +122,7 @@
   margin-top: $xs;
 }
 
-.create_row-label {
+.edit_row-label {
   width: 33rem;
   padding-right: $md;
   box-sizing: border-box;
@@ -118,13 +133,13 @@
   color: #b3b3b3;
 }
 
-.create_row-item {
+.edit_row-item {
   flex: 1;
 }
 
 // CREATE                                        TEXT INPUT
 // ########################################################
-.create_input {
+.edit_input {
   display: block;
   width: 100%;
   height: $row-height-md;
@@ -136,24 +151,22 @@
   font-weight: $fw-md;
 }
 
-.create_input::placeholder {
+.edit_input::placeholder {
   color: $adam-sub-heading;
 }
 
-.create_input-normal {
+.edit_input-normal {
   box-sizing: border-box;
-  background: transparent;
-  // border-top: $border-xxs solid $adam-app-border;
+  background: transparent; // border-top: $border-xxs solid $adam-app-border;
   // border-bottom: $border-xxs solid $adam-app-border;
   // border-left: $border-xxs solid $adam-app-border; // why does this have a border defined
   // border-right: $border-xxs solid $adam-app-border; // and not use primary-border?
   border: $border-xxs solid rgba(255, 255, 255, 0.2);
   border-radius: 0;
-  outline: 0;
-  //background-color: $adam-input-normal;
+  outline: 0; //background-color: $adam-input-normal;
 }
 
-.create_input-error {
+.edit_input-error {
   box-sizing: border-box;
   background: transparent;
   border-top: $border-xxs solid $adam-red;
@@ -165,17 +178,17 @@
   background-color: $adam-input-error;
 }
 
-.create_input-error::placeholder {
+.edit_input-error::placeholder {
   color: $adam-red;
 }
 
 // ## CREATE                                       CHECKBOX
 // ########################################################
-.create_checkbox {
+.edit_checkbox {
   position: relative;
 }
 
-.create_checkbox:after {
+.edit_checkbox:after {
   content: '';
   position: absolute;
   width: $md;
@@ -185,7 +198,7 @@
   border: $border-xxs solid $adam-app-border;
 }
 
-.create_checkbox:checked:after {
+.edit_checkbox:checked:after {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -202,7 +215,7 @@
 
 // CREATE                                      SELECT INPUT
 // ########################################################
-.create_select {
+.edit_select {
   width: 100%;
   height: $row-height-md;
   padding-left: $md;
@@ -212,20 +225,18 @@
   font-weight: $fw-md;
 }
 
-.create_select-normal {
+.edit_select-normal {
   box-sizing: border-box;
-  background: transparent;
-  // border-top: $border-xxs solid $adam-app-border;
+  background: transparent; // border-top: $border-xxs solid $adam-app-border;
   // border-bottom: $border-xxs solid $adam-app-border;
   // border-left: $border-xxs solid $adam-app-border; // why does this have a border defined
   // border-right: $border-xxs solid $adam-app-border; // and not use primary-border?
   border: $border-xxs solid rgba(255, 255, 255, 0.2);
   border-radius: 0;
-  outline: 0;
-  // background-color: $adam-input-normal;
+  outline: 0; // background-color: $adam-input-normal;
 }
 
-.create_select-error {
+.edit_select-error {
   box-sizing: border-box;
   background: transparent;
   border-top: $border-xxs solid $adam-red;
@@ -237,13 +248,13 @@
   background-color: $adam-input-error;
 }
 
-.create_select-error::placeholder {
+.edit_select-error::placeholder {
   color: $adam-red;
 }
 
 // CREATE                                          TEXTAREA
 // ########################################################
-.create_textarea {
+.edit_textarea {
   display: block;
   width: 100%;
   height: $row-height-md;
@@ -258,7 +269,7 @@
   height: 16rem;
 }
 
-.create_textarea::placeholder {
+.edit_textarea::placeholder {
   color: $adam-sub-heading;
 }
 
@@ -268,7 +279,7 @@
   height: 16rem;
 }
 
-// ## CREATE                                    GEO SUGGEST
+// ## EDIT                                      GEO SUGGEST
 // ########################################################
 .geosuggest {}
 
@@ -315,19 +326,19 @@
 
 // CREATE                                             STATE
 // ########################################################
-.create_empty {
+.edit_empty {
   color: $adam-sub-heading;
 }
 
-.create_filled {
+.edit_filled {
   color: #fff;
 }
 
-.create_selectList {
+.edit_selectList {
   color: $adam-heading;
 }
 
-.create_asterisk {
+.edit_asterisk {
   padding-left: $xxs;
   font-size: $font-xl;
   line-height: $font-xl;
@@ -335,7 +346,7 @@
   color: $adam-red;
 }
 
-.create_required {
+.edit_required {
   margin-left: 33rem;
   padding-top: $xs;
   padding-left: $xs;
@@ -348,7 +359,7 @@
 
 // ## CREATE                                         ERRORS
 // ########################################################
-#create_error {
+#edit_error {
   width: 100%;
   padding: $md;
   border-top: $border-xxs solid $adam-red;
@@ -363,26 +374,26 @@
   background-color: $adam-input-error;
 }
 
-#create_error-header {
+#edit_error-header {
   font-weight: $fw-heading;
 }
 
 // CREATE                                           BUTTONS
 // ########################################################
-#create_buttons-container {
+#edit_buttons-container {
   display: flex;
   width: 100%;
   margin-top: $xl;
 }
 
-#create_buttons {
+#edit_buttons {
   display: flex;
   justify-content: center;
   flex: 1;
   margin-bottom: 64px;
 }
 
-#create_button-cancel {
+#edit_button-cancel {
   width: 30rem;
   font-size: $font-xl;
   line-height: $font-xl;
@@ -400,13 +411,13 @@
   margin-right: 32px;
 }
 
-#create_button-cancel:hover {
+#edit_button-cancel:hover {
   color: #000;
   background-color: #e5e5e5;
   transition: background-color 100ms ease-in-out;
 }
 
-#create_button-submit {
+#edit_button-submit {
   width: 30rem;
   font-size: $font-xl;
   line-height: $font-xl;
@@ -424,7 +435,7 @@
   margin-left: 32px;
 }
 
-#create_button-submit:hover {
+#edit_button-submit:hover {
   color: #000;
   background-color: #e5e5e5;
   transition: background-color 200ms ease-in-out;
