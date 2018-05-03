@@ -23,7 +23,7 @@ const getConfig = (NODE_ENV) => {
       VERBOSE_REDUX_LOGGING: false,
     },
     production: {
-      API_URI: 'http://localhost:8800/graphql',
+      API_URI: 'http://adammackintosh.net:8080/graphql',
       CORS_OPTIONS: {
         credentials: 'same-origin',
         mode: 'cors',

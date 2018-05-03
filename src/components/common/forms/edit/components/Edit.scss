@@ -1,0 +1,55 @@
+@import "../../../../../styles/variables/_colors.scss";
+@import "../../../../../styles/variables/_sizes.scss";
+@import "../../../../../styles/mixins/_mixins.scss";
+
+// EDIT FORM                                        SUB-NAV
+// ########################################################
+#edit_subnav {
+  @include flex(row);
+  @include flex-center;
+  flex: 0;
+  width: 100%;
+  margin-top: $nav-height;
+  padding-top: $xl;
+  padding-right: $md;
+  padding-left: $md;
+  margin-bottom: -$xxs;
+  box-sizing: border-box;
+  user-select: none;
+  font-size: $font-xl;
+  line-height: $font-xl;
+  font-weight: $fw-md;
+  color: $adam-sub-heading;
+}
+
+#edit_subnav_record {
+  font-size: $font-xl;
+  line-height: $font-xl;
+  text-align: left;
+}
+
+#edit_subnav_record-label {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  box-sizing: border-box;
+  font-weight: 600;
+  color: #fff;
+}
+
+#edit_subnav_record-status {
+  padding-left: 0.8rem;
+  box-sizing: border-box;
+  color: $adam-green;
+  font-weight: 600;
+}
+
+#edit_subnav-right-side {
+  @include flex(row);
+  @include flex-end;
+  flex: 1;
+}
+
+#edit_subnav-right-side span {
+  padding-right: $xxs;
+  color: $adam-red;
+}

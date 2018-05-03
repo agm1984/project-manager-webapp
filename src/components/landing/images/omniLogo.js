@@ -3,12 +3,13 @@ import PropTypes from 'prop-types'
 import '../Landing.css'
 
 const OmniLogo = (props) => {
-  const { height } = props
+  const { height, style } = props
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 146.62 112.9"
       height={height}
+      style={style}
     >
       <defs>
         <filter id="drop-shadow" colorInterpolationFilters="sRGB" x="-50%" y="-50%" height="200%" width="200%">
@@ -47,8 +48,12 @@ const OmniLogo = (props) => {
   )
 }
 
+OmniLogo.defaultProps = {
+  style: undefined,
+}
 OmniLogo.propTypes = {
   height: PropTypes.number.isRequired,
+  style: PropTypes.objectOf(PropTypes.any),
 }
 
 export default OmniLogo

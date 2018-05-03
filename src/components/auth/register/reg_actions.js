@@ -52,7 +52,7 @@ export const handleFirstTimeSignIn = () => async (dispatch) => {
     }
     client.resetStore()
     dispatch({ type: AUTH_SUCCESS })
-    return dispatch(push('/board'))
+    return dispatch(push('/admin/board'))
   } catch (e) {
     return dispatch({ type: SIGN_OUT })
   }

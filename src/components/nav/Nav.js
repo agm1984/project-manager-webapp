@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
-import UserDetails from './UserDetails'
-import handleGetPersonAvatar from './nav_actions'
+import OmniLogo from '../landing/images/omniLogo'
+import noPhoto from './images/noPhoto.png'
 import { handleSignOut } from '../auth/signin/auth_actions'
 import signout from './images/signout.png'
 import './Nav.css'
@@ -28,23 +28,14 @@ class NavContainer extends Component {
       scrollPositionY: 0,
     }
   }
-  /**
-   * When the Nav Container loads, the currently signed in user's profile
-   * picture should be acquired from the server.
-   */
+
   componentDidMount() {
     window.addEventListener('scroll', debounce(this.handleScroll, 16))
-    return this.props.handleGetPersonAvatar()
+    return window.scrollTo(0, 0)
   }
 
-  /**
-   * To handle the case when a user updates his/her profile picture while
-   * signed in, the profile picture is acquired every page reload.
-   * This is moderately wasteful and could be cleaned up further.
-   */
   componentWillUnmount() {
-    window.removeEventListener('scroll', debounce(this.handleScroll, 16))
-    return this.props.handleGetPersonAvatar()
+    return window.removeEventListener('scroll', debounce(this.handleScroll, 16))
   }
 
   /**
@@ -60,27 +51,31 @@ class NavContainer extends Component {
   /**
    * When the user scrolls down, the Nav Bar should transition from its
    * Top State to Scrolling State. If the view is scrolled more than zero,
-   * Scrolling State and additional CSS styling will be enabled.
+   * Scrolling State and additional CSS will be applied.
    */
   handleScroll = () => {
     const scrollPositionY = +window.scrollY
-    this.setState({ scrollPositionY })
+    return this.setState({ scrollPositionY })
   }
 
+  // TODO: Fix isScrolling: it needs to be a class method
+  // to prevent re-rendering every scroll event due to setState.
+  // See landing page implementation.
   render() {
-    const Spacer = () => (
-      <div className="nav_menu-spacer">|</div>
-    )
+    const person_avatar = (this.props.person)
+      ? this.props.person.person_avatar
+      : noPhoto
     const isScrolling = !!this.state.scrollPositionY
+    console.log('SCROLLING', isScrolling)
     return (
       <div className={(isScrolling) ? 'nav isScrolling' : 'nav'}>
-        <nav id="nav_elements">
+        <div id="nav_elements">
           <div id="nav_left-container">
             <NavLink
-              to="/admin/profile"
+              to="/"
               style={{ textDecoration: 'none' }}
             >
-              <UserDetails isScrolling={isScrolling} />
+              <OmniLogo height={55} />
             </NavLink>
           </div>
           <div id="nav_menu">
@@ -93,7 +88,7 @@ class NavContainer extends Component {
                 BOARD
               </NavLink>
             </div>
-            <Spacer />
+            <div className="nav_menu-spacer">|</div>
             <div className="nav_menu-item">
               <NavLink
                 to="/admin/clients"
@@ -103,28 +98,61 @@ class NavContainer extends Component {
                 CLIENTS
               </NavLink>
             </div>
-            <Spacer />
+            <div className="nav_menu-spacer">|</div>
             <div className="nav_menu-item">
               <NavLink
                 to="/admin/leads"
                 className="nav_link"
-                activeClassName="nav_link-active"
+                activeClassName={(isScrolling) ? 'nav_link-active isScrolling' : 'nav_link-active'}
               >
                 LEADS
               </NavLink>
             </div>
-            <Spacer />
+            <div className="nav_menu-spacer">|</div>
             <div className="nav_menu-item">
               <NavLink
                 to="/admin/articles"
                 className="nav_link"
-                activeClassName="nav_link-active"
+                activeClassName={(isScrolling) ? 'nav_link-active isScrolling' : 'nav_link-active'}
               >
                 ARTICLES
               </NavLink>
             </div>
           </div>
           <div id="nav_user">
+            {/* <div className="nav_user-item">
+              <NavLink
+                to="/admin/tasks"
+                className="nav_link"
+                activeClassName={(isScrolling) ? 'nav_link-active isScrolling' : 'nav_link-active'}
+              >
+                TASKS
+              </NavLink>
+            </div>
+            <div className="nav_menu-spacer">|</div> */}
+            <div className="nav_user-item">
+              <NavLink
+                to="/admin/people"
+                className="nav_link"
+                activeClassName={(isScrolling) ? 'nav_link-active isScrolling' : 'nav_link-active'}
+              >
+                TEAM
+              </NavLink>
+            </div>
+            <NavLink
+              to="/admin/profile"
+              style={{ textDecoration: 'none' }}
+            >
+              <div
+                id="nav_user-avatar"
+                style={{
+                  backgroundRepeat: 'no-repeat',
+                  backgroundImage: `url(${person_avatar})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center center',
+                }}
+              />
+            </NavLink>
             <NavLink
               to="/signin"
               className="nav_user-signout"
@@ -138,18 +166,21 @@ class NavContainer extends Component {
               />
             </NavLink>
           </div>
-        </nav>
+        </div>
       </div>
     )
   }
 }
 
+NavContainer.defaultProps = {
+  person: undefined,
+}
 NavContainer.propTypes = {
-  router: PropTypes.shape({ // eslint-disable-line
+  router: PropTypes.shape({ // eslint-disable-line react/no-unused-prop-types
     location: PropTypes.object,
   }).isRequired,
-  handleGetPersonAvatar: PropTypes.func.isRequired,
   handleSignOut: PropTypes.func.isRequired,
+  person: PropTypes.objectOf(PropTypes.any),
 }
 
 /**
@@ -158,14 +189,9 @@ NavContainer.propTypes = {
  * @param {Object} state Redux App State
  */
 const mapStateToProps = (state) => {
-  const { router, nav } = state
-  const { person_avatar } = nav
-  return {
-    router,
-    person_avatar,
-  }
+  const { router, auth } = state
+  const { person } = auth
+  return { router, person }
 }
 
-export default connect(mapStateToProps, {
-  handleGetPersonAvatar, handleSignOut,
-})(NavContainer)
+export default connect(mapStateToProps, { handleSignOut })(NavContainer)

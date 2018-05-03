@@ -1,10 +1,12 @@
 import {
   INITIALIZE_APP, AUTH_SUCCESS, AUTH_FAIL, SIGN_OUT,
+  HYDRATE_PROFILE_SUCCESS, HYDRATE_PROFILE_FAIL,
 } from './auth_types'
 
 const INITIAL_STATE = {
   isAuthenticated: null,
   isSigningIn: null,
+  person: {},
 }
 
 /**
@@ -34,6 +36,18 @@ export default (state = INITIAL_STATE, action) => {
         ...state,
         isAuthenticated: false,
         isSigningIn: false,
+      }
+    case HYDRATE_PROFILE_SUCCESS:
+      return {
+        ...state,
+        person: {
+          ...action.payload,
+        },
+      }
+    case HYDRATE_PROFILE_FAIL:
+      return {
+        ...state,
+        person: {},
       }
     default:
       return state

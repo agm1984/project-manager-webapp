@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { DragDropContext } from 'react-beautiful-dnd'
-import LevelUp from '../levelup/LevelUp'
-import Nav from '../nav/Nav'
+// import LevelUp from '../levelup/LevelUp'
 import Column from './Column'
 import './Board.css'
 

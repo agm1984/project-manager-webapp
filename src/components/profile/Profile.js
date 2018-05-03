@@ -2,9 +2,12 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { withApollo } from 'react-apollo'
+import {
+  FormView, FormSection, FormShowText, FormShowEmail, FormShowImage,
+} from '../common/forms/common'
 import GET_ME_QUERY from './profile_queries'
 import formatTime from './utils'
-import noPhoto from './images/noPhoto.png'
+import './Profile.css'
 
 class Profile extends Component {
   constructor(props) {
@@ -14,6 +17,7 @@ class Profile extends Component {
       serverErrors: [],
     }
   }
+
   /**
    * The currently signed in user's details should be retrieved from the server
    * when he/she lands on the Profile View.
@@ -22,6 +26,7 @@ class Profile extends Component {
     window.scrollTo(0, 0)
     return this.getMe()
   }
+
   async getMe() {
     try {
       const res = await this.props.client.query({
@@ -31,15 +36,16 @@ class Profile extends Component {
       return this.setState({ record: me })
     } catch (e) {
       return this.setState({
-        serverErrors: ['Problem getting person record.'],
+        serverErrors: ['Problem getting your data from the server.'],
       })
     }
   }
+
   render() {
     if (this.state.serverErrors.length) {
       return (
-        <div id="profile_wrapper">
-          <div id="profile_container">
+        <div id="profile-wrapper">
+          <div id="profile-container">
             {this.state.serverErrors}
           </div>
         </div>
@@ -47,8 +53,8 @@ class Profile extends Component {
     }
     if (!Object.keys(this.state.record).length) {
       return (
-        <div id="profile_wrapper">
-          <div id="profile_container">
+        <div id="profile-wrapper">
+          <div id="profile-container">
             Loading...
           </div>
         </div>
@@ -64,36 +70,16 @@ class Profile extends Component {
       person_memberType,
     } = this.state.record
     return (
-      <div id="profile_wrapper">
-        <div id="profile_container">
-          <div id="profile_form">
-            <div id="profile_pic-container">
-              <img
-                id="profile_pic"
-                src={(!person_avatar) ? noPhoto : person_avatar}
-                alt="Avatar"
-              />
-            </div>
-            <div id="profile_name">{`${person_givenName} ${person_familyName}`}</div>
-            <div className="view_row">
-              <div className="view_row-label">Email</div>
-              <div className="view_row-item">{person_email}</div>
-            </div>
-            <div className="view_row">
-              <div className="view_row-label">Location</div>
-              <div className="view_row-item">{person_location}</div>
-            </div>
-            <div className="view_row">
-              <div className="view_row-label">Joined</div>
-              <div className="view_row-item">{formatTime(+person_created)}</div>
-            </div>
-            <div className="view_row">
-              <div className="view_row-label">Member Type</div>
-              <div className="view_row-item">{person_memberType}</div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <FormView>
+        <div style={{ height: 200 }} />
+        <FormSection heading={`${person_givenName.toUpperCase()} ${person_familyName.toUpperCase()}`} key="details">
+          <FormShowImage value={person_avatar || ''} />
+          <FormShowEmail name="Email" value={person_email} />
+          <FormShowText name="Location" value={person_location} />
+          <FormShowText name="Joined" value={formatTime(+person_created) || ''} />
+          <FormShowText name="Member Type" value={person_memberType || ''} />
+        </FormSection>
+      </FormView>
     )
   }
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-// import PropTypes from 'prop-types'
-import jacky from './images/Jacky.jpg'
+import PropTypes from 'prop-types'
+import gql from 'graphql-tag'
+import noPhoto from './images/noPhoto.png'
 import './Nav.css'
 
 const withCommas = x => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
@@ -8,45 +9,17 @@ const withCommas = x => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 class UserDetails extends Component {
   constructor(props) {
     super(props)
-    let start = true
+    // let start = true
     this.state = {
-      name: 'Jacky',
-      avatar: jacky,
       level: 87,
       levelXP: 0,
       levelXPRequired: 10000,
     }
-    if (start) {
-      for (let i = 0; i < 20; i += 1) {
-        setTimeout(() => this.updateXP(), i * 1000)
-      }
-      start = false
-    }
-  }
-
-  getRandomXP = () => this.setState({
-    levelXP: Math.floor((Math.random() * 5000) + 1),
-  })
-
-  updateXP = () => {
-    if (this.state.levelXP > this.state.levelXPRequired) {
-      console.log('done')
-      return null
-    }
-    const num = this.state.levelXP + 900
-    if (num >= 10000) {
-      return this.setState({
-        levelXP: 10000,
-      })
-    }
-    return this.setState({
-      levelXP: this.state.levelXP + 900,
-    })
   }
 
   render() {
     const {
-      avatar, level, name, levelXP, levelXPRequired,
+      level, levelXP, levelXPRequired,
     } = this.state
     return (
       <div id="nav_left_user-container">
@@ -55,7 +28,7 @@ class UserDetails extends Component {
             id="nav_left_user-avatar"
             style={{
               backgroundRepeat: 'no-repeat',
-              backgroundImage: `url(${avatar})`,
+              backgroundImage: `url(${person_avatar || noPhoto})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center center',
             }}
@@ -66,7 +39,7 @@ class UserDetails extends Component {
         </div>
         <div id="nav_left_user_rightSide">
           <div id="nav_left_user-name">
-            {name}
+            {person_givenName}
           </div>
           <div id="nav_left_user-xpFill">
             <div
@@ -90,5 +63,12 @@ class UserDetails extends Component {
     )
   }
 }
+
+// UserDetails.propTypes = {
+//   person: PropTypes.shape({
+//     person_avatar: PropTypes.string,
+//     person_givenName: PropTypes.string,
+//   }).isRequired,
+// }
 
 export default UserDetails

@@ -6,17 +6,15 @@ import { reduxThunk, logger } from './middleware'
 import reg from '../components/auth/register/reg_reducer'
 import auth from '../components/auth/signin/auth_reducer'
 import nav from '../components/nav/nav_reducer'
-import createArticle from '../components/create/article/article_create_reducer'
-import editArticle from '../components/edit/article/article_edit_reducer'
 
 /**
  * Upon initialization, Redux reducers are combined and loaded into the app state.
  * This app follows the Folder-as-a-Component Architecture Pattern to
  * minimize coupling and to maximize scalability. This also promotes
- * multi-developer workflow by minimizing file collisions and merge conflicts.
+ * multi-developer workflow by minimizing file collisions.
  */
 const reducers = combineReducers({
-  reg, auth, router, nav, form, createArticle, editArticle,
+  reg, auth, router, nav, form,
 })
 
 /**

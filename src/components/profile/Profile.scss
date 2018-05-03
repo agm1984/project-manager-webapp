@@ -1,0 +1,18 @@
+@import "../../styles/variables/_colors.scss";
+@import "../../styles/variables/_sizes.scss";
+@import "../../styles/mixins/_mixins.scss";
+
+// ## PROFILE                                        LAYOUT
+// ########################################################
+#profile-wrapper {
+  @include flex(column);
+  align-items: center;
+  padding-right: $lg;
+  padding-left: $lg;
+  flex: 1;
+}
+
+#profile-container {
+  width: 100%;
+  max-width: 102.4rem;
+}

@@ -15,7 +15,7 @@ const getConfig = (NODE_ENV) => {
       VERBOSE_REDUX_LOGGING: false,
     },
     test: {
-      API_URI: 'http://localhost:7777/graphql',
+      API_URI: 'http://INSERT_URL:PORT/graphql',
       CORS_OPTIONS: {
         credentials: 'same-origin',
         mode: 'cors',

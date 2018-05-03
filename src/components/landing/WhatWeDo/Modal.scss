@@ -1,0 +1,37 @@
+.modal_backdrop {
+  animation: fadein 500ms;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal_window {
+  position: relative;
+}
+
+.modal_closeButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+}
+
+.modal_closeButton > svg {
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+
+.modal_closeButton-icon {
+  stroke: #db8f6b;
+  fill: transparent;
+  stroke-linecap: round;
+  stroke-width: 5;
+}

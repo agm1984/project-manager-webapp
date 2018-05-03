@@ -1,0 +1,528 @@
+@import "../../../../styles/variables/_colors.scss";
+@import "../../../../styles/variables/_sizes.scss";
+@import "../../../../styles/mixins/_mixins.scss";
+
+// ## FORM                                           LAYOUT
+// ########################################################
+#form-wrapper {
+  @include flex(column);
+  align-items: center;
+  padding-right: $lg;
+  padding-left: $lg;
+  flex: 1;
+}
+
+#form-container {
+  width: 100%;
+  max-width: 102.4rem;
+}
+
+// ## FORM                                          SUB-NAV
+// ########################################################
+#form_subnav {
+  @include flex(row);
+  @include flex-center;
+  flex: 0;
+  width: 100%;
+  margin-top: $nav-height;
+  padding-top: $xl;
+  padding-right: $md;
+  padding-left: $md;
+  margin-bottom: -$xxs;
+  box-sizing: border-box;
+  user-select: none;
+  color: $adam-sub-heading;
+}
+
+#form_subnav_record {
+  font-size: 1.8rem;
+  line-height: 1.8rem;
+  letter-spacing: 0.2em;
+  text-align: left;
+}
+
+#form_subnav_record-label {
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  box-sizing: border-box;
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: #fff;
+}
+
+#form_subnav_record-status {
+  padding-left: 0.8rem;
+  box-sizing: border-box;
+  color: $adam-green;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+}
+
+// CREATE & EDIT FORMS
+#form_subnav-right-side {
+  @include flex(row);
+  @include flex-end;
+  flex: 1;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+}
+
+#form_subnav-right-side span {
+  padding-right: $xxs;
+  color: $adam-red;
+}
+
+// VIEW FORM
+#form_subnav_edit {
+  @include flex(row);
+  @include flex-end;
+  flex: 1;
+}
+
+#form_subnav_edit-button {
+  outline: none;
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  font-size: 2.0rem;
+  line-height: 2.0rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: $adam-orange;
+  text-decoration: none;
+}
+
+#form_subnav_edit-button:hover {
+  color: $adam-heading;
+}
+
+#form_subnav_edit-button:active {
+  color: $adam-orange;
+}
+
+// ## FORM                                         SECTIONS
+// ########################################################
+.form_section {
+  @include flex(column);
+  align-items: center; // width: 102.4rem;
+  width: 100%;
+  box-shadow: -8px 14px 40px 0px rgba(0, 0, 0, 0.5);
+  padding-bottom: 16px;
+  margin-bottom: 48px;
+  flex: 0;
+}
+
+.form_section-margin-sm {
+  margin-top: 1.3rem;
+}
+
+.form_section-margin-lg {
+  margin-top: 3.4rem;
+}
+
+.form_section_heading {
+  display: flex;
+  width: 100%;
+  padding: 16px;
+  margin-bottom: 8px;
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  color: #fff;
+  background-color: #1b1e3d;
+}
+
+// FORM                                         SECTION ROW
+// ########################################################
+.form_row-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.form_row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  min-height: $row-height-md;
+  margin-top: $xs;
+}
+
+.form_row-label {
+  width: 33rem;
+  padding-right: $md;
+  box-sizing: border-box;
+  font-size: $font-xl;
+  line-height: $font-xl;
+  text-align: right;
+  letter-spacing: 0.2em;
+  color: #b3b3b3;
+}
+
+.form_row-item {
+  flex: 1;
+  font-size: $font-xl;
+  line-height: $font-xl;
+  font-weight: $fw-md;
+  color: #fff;
+}
+
+a.form_link:link {
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  font-weight: 400;
+  color: #fff;
+  text-decoration: none;
+}
+
+a.form_link:visited {
+  color: #fff;
+}
+
+a.form_link:hover {
+  color: #db8f6b;
+}
+
+a.form_link:active {
+  color: #1b1e3d;
+}
+
+#form_avatar-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#form_avatar-photo {
+  height: 12.8rem;
+  width: 12.8rem;
+  margin-top: 16px;
+  margin-bottom: 1.6rem;
+  border-radius: 50%;
+}
+
+// FORM                                          TEXT INPUT
+// ########################################################
+.form_input {
+  display: block;
+  width: 100%;
+  height: $row-height-md;
+  padding-left: $md;
+  box-shadow: none;
+  -webkit-appearance: none;
+  font-size: $font-xl;
+  line-height: $font-xl;
+  font-weight: $fw-md;
+}
+
+.form_input::placeholder {
+  color: $adam-sub-heading;
+}
+
+// ## FORM                                         CHECKBOX
+// ########################################################
+.form_checkbox {
+  position: relative;
+}
+
+.form_checkbox:after {
+  content: '';
+  position: absolute;
+  width: $md;
+  height: $md;
+  margin-top: -0.2rem;
+  background-color: $adam-input-normal;
+  border: $border-xxs solid $adam-app-border;
+}
+
+.form_checkbox:checked:after {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  content: '\002714';
+  position: absolute;
+  color: $adam-green;
+  width: $md;
+  height: $md;
+  margin-top: -0.2rem;
+  font-size: $font-xl;
+  background-color: $adam-input-normal;
+  border: $border-xxs solid $adam-app-border;
+}
+
+// FORM                                        SELECT INPUT
+// ########################################################
+.form_select {
+  width: 100%;
+  height: $row-height-md;
+  padding-left: $md;
+  box-shadow: none;
+  font-size: $font-xl;
+  line-height: $font-xl;
+  font-weight: $fw-md;
+}
+
+// CREATE                                          TEXTAREA
+// ########################################################
+.form_textarea {
+  display: block;
+  width: 100%;
+  height: $row-height-md;
+  padding-left: $md;
+  box-shadow: none;
+  -webkit-appearance: none;
+  font-size: $font-xl;
+  line-height: $font-xl;
+  font-weight: $fw-md;
+  padding-top: $md;
+  box-sizing: border-box;
+  height: 16rem;
+}
+
+.form_textarea::placeholder {
+  color: $adam-sub-heading;
+}
+
+// LOOKS LIKE NOT USED ANYMORE
+// .form_multi {
+//   padding-top: $md;
+//   box-sizing: border-box;
+//   height: 16rem;
+// }
+
+// ## FORM                                      GEO SUGGEST
+// ########################################################
+.geosuggest {}
+
+.geosuggest__input {}
+
+.geosuggest__suggests-wrapper {
+  position: absolute;
+  margin-left: 0;
+}
+
+.geosuggest__suggests {
+  padding: 0;
+  box-sizing: border-box;
+  box-shadow: 0.4rem 0.4rem 0.4rem #e5e5e5;
+  background: transparent;
+  border-top: 0.1rem solid #e5e5e5;
+  border-bottom: 0.1rem solid #e5e5e5;
+  border-left: 0.1rem solid #e5e5e5;
+  border-right: 0.1rem solid #e5e5e5;
+  border-radius: 0;
+  outline: 0;
+  background-color: #fafafa;
+  cursor: pointer;
+  color: #000;
+}
+
+.geosuggest__item {
+  list-style-type: none;
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  padding: 0.8rem 1.6rem 0.8rem 1.6rem;
+  margin-left: 0;
+  color: #000;
+}
+
+.geosuggest__item--active {
+  background: #3f88c5;
+  color: #fff;
+}
+
+.geosuggest__suggests--hidden {
+  max-height: 0;
+  overflow: hidden;
+  border-width: 0;
+}
+
+// FORM                                               STATE
+// ########################################################
+.form_empty {
+  color: $adam-sub-heading;
+}
+
+.form_filled {
+  color: #fff;
+}
+
+.form_selectList {
+  color: $adam-heading;
+}
+
+.form_state-normal {
+  box-sizing: border-box;
+  background: transparent;
+  border: $border-xxs solid rgba(255, 255, 255, 0.2);
+  border-radius: 0;
+  outline: 0;
+}
+
+.form_state-error {
+  box-sizing: border-box;
+  background: transparent;
+  border-top: $border-xxs solid $adam-red;
+  border-bottom: $border-xxs solid $adam-red;
+  border-left: $border-xxs solid $adam-red;
+  border-right: $border-xxs solid $adam-red;
+  outline: 0;
+  color: $adam-red;
+  background-color: $adam-input-error;
+}
+
+.form_state-error::placeholder {
+  color: $adam-red;
+}
+
+.form_asterisk {
+  padding-left: $xxs;
+  font-size: $font-xl;
+  line-height: $font-xl;
+  font-weight: $fw-heading;
+  color: $adam-red;
+}
+
+.form_required {
+  margin-left: 33rem;
+  padding-top: $xs;
+  padding-left: $xs;
+  padding-bottom: $xs;
+  font-style: italic;
+  font-size: $font-md;
+  line-height: $font-xl;
+  color: $adam-red;
+}
+
+// ## CREATE                                         ERRORS
+// ########################################################
+#edit_error {
+  width: 100%;
+  padding: $md;
+  border-top: $border-xxs solid $adam-red;
+  border-bottom: $border-xxs solid $adam-red;
+  border-left: $border-xxs solid $adam-red;
+  border-right: $border-xxs solid $adam-red;
+  border-radius: $border-xxs $border-xxs $border-xxs $border-xxs;
+  box-sizing: border-box;
+  font-size: $font-md;
+  line-height: $font-md;
+  color: $adam-red;
+  background-color: $adam-input-error;
+}
+
+#edit_error-header {
+  font-weight: $fw-heading;
+}
+
+// FORM                                             BUTTONS
+// ########################################################
+#form_buttons-container {
+  display: flex;
+  width: 100%;
+  margin-top: $xl;
+}
+
+#form_buttons {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  margin-bottom: 64px;
+}
+
+#form_button-cancel {
+  width: 30rem;
+  font-size: $font-xl;
+  line-height: $font-xl;
+  font-weight: $fw-heading;
+  height: 4.8rem;
+  text-decoration: none;
+  color: #fff;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  letter-spacing: 1px;
+  padding: 16px;
+  padding-left: 65px;
+  padding-right: 65px;
+  white-space: nowrap;
+  margin-right: 32px;
+}
+
+#form_button-cancel:hover {
+  color: #000;
+  background-color: #e5e5e5;
+  transition: background-color 100ms ease-in-out;
+}
+
+#form_button-submit {
+  width: 30rem;
+  font-size: $font-xl;
+  line-height: $font-xl;
+  font-weight: $fw-heading;
+  height: 4.8rem;
+  text-decoration: none;
+  color: #fff;
+  background-color: #1b1e3d;
+  box-shadow: -8px 14px 40px 0px rgba(0, 0, 0, 0.5);
+  border: none;
+  letter-spacing: 1px;
+  padding: 16px;
+  padding-left: 65px;
+  padding-right: 65px;
+  white-space: nowrap;
+  margin-left: 32px;
+}
+
+#form_button-submit:hover {
+  color: #000;
+  background-color: #e5e5e5;
+  transition: background-color 200ms ease-in-out;
+}
+
+// ## FORM                                      BACK BUTTON
+// ########################################################
+#form_back {
+  display: flex;
+  justify-content: center;
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  margin-bottom: 64px;
+}
+
+#form_back-link {
+  outline: none;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 46px;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 15px;
+  padding: 16px;
+  padding-left: 65px;
+  padding-right: 65px;
+  margin-top: 32px;
+  white-space: nowrap;
+}
+
+#form_back-link:hover {
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+#form_back-link:active {
+  color: #db8f6b;
+  border: 1px solid #db8f6b;
+}

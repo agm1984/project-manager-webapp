@@ -11,6 +11,7 @@ import SignIn from './components/auth/signin/Signin'
 import AdminApp from './components/AdminApp'
 import NotFoundPage from './components/404'
 import './Root.css'
+import './animate.css'
 
 const store = configureStore()
 

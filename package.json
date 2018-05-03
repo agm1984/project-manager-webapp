@@ -23,6 +23,7 @@
     "react-dom-confetti": "0.0.8",
     "react-geosuggest": "^2.7.0",
     "react-google-maps": "^9.4.5",
+    "react-modal-image": "^2.1.4",
     "react-quill": "^1.2.3",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
@@ -37,6 +38,7 @@
     "redux": "^3.7.2",
     "redux-form": "^7.2.3",
     "redux-thunk": "^2.2.0",
+    "subscriptions-transport-ws": "^0.9.6",
     "validator": "^9.4.0"
   },
   "scripts": {

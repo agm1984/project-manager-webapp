@@ -1,0 +1,38 @@
+.fucker {
+  position: relative;
+}
+.btest {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 46px;
+  text-decoration: none;
+  color: green;
+  border: 1px solid green;
+  letter-spacing: 1px;
+  font-size: 15px;
+  padding: 16px;
+  padding-left: 65px;
+  padding-right: 65px;
+  margin-top: 32px;
+  white-space: nowrap;
+  /* overflow: hidden; */
+}
+
+.btest::before {
+  --size: 0;
+  content: "";
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--size);
+  height: var(--size);
+  background: radial-gradient( circle closest-side, green, transparent);
+  transform: translate(-50%, -50%);
+  transition: all 0.2s ease;
+}
+
+.btest:hover::before {
+  --size: 200px;
+}

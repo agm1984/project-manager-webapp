@@ -1,0 +1,29 @@
+h1 {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  margin-top: -0.75em;
+  font-size: 5.5rem;
+  text-align: center;
+  line-height: 2.5rem; }
+  h1 small {
+    display: block;
+    font-family: Arial;
+    font-size: 1rem;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    line-height: 3; }
+
+.glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200vw;
+  height: 200vw;
+  margin-top: -100vw;
+  margin-left: -100vw; }
+
+.shadowed {
+  text-shadow: 5px 10px 5px rgba(0, 0, 0, 0.2); }

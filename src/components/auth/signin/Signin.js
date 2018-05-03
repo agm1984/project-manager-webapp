@@ -27,6 +27,7 @@ class SignInView extends Component {
    * @param {Object} props Sign In Form submitted fields
    */
   async handleLoginAttempt(props) {
+    console.log('ERROR', 'fucking up here')
     const { person_email, person_password } = props
     try {
       const res = await this.props.mutate({
@@ -35,8 +36,9 @@ class SignInView extends Component {
       const token = res.data.login
       return this.props.handleSignInSuccess(token)
     } catch (e) {
+      console.log('E', e)
       return this.setState({
-        serverErrors: [e.graphQLErrors[0].message],
+        serverErrors: [`${JSON.stringify(e)}`],
       })
     }
   }
